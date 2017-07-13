@@ -1,0 +1,95 @@
+p {
+    font-size: 2vh;
+    font-style: italic;
+}
+
+.row-1,
+.row-2,
+.row-3 {
+    margin-top: 2vh;
+}
+
+.row-1 {
+    height: 8vh;
+}
+
+.row-2 {
+    height: 35vh;
+}
+
+.row-3 {
+    height: 33vh;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.img-sz-3 {
+    width: 22.6vw;
+    max-height: 21vh;
+}
+
+.img-sz-4 {
+    width: 31vw;
+    max-height: 26vh;
+}
+
+.img-sz-6 {
+    width: 70%;
+    margin-left: 12%;
+    margin-right: 12%;
+    max-height: 27vh;
+}
+
+.you,
+.opp {
+    width: 23vw;
+    height: 22vh;
+    margin: 0 1vh 0 1vh;
+}
+
+.padding-top-only {
+    padding: 10px 0 0 0;
+}
+
+.char-name {
+    text-align: center;
+}
+
+.health {
+    padding-left: 10px;
+    font-style: italic;
+    font-size: 2vh;
+}
+
+.charDescript {
+    text-align: center;
+}
+
+#attack-1,
+#attack-4 {
+    margin: 5vh 0vw 5vh 0vw;
+    ;
+    padding: 5vh 0vw 5vh 0vw;
+}
+
+#attackBtn {
+    margin-top: 10px;
+    margin-bottom: 3vh;
+}
+
+#charInstructions {
+    padding-top: 10px;
+
+}
+#choose-char {
+	margin-top: 2vh;
+}
+
+#your-health,
+#your-health-value,
+#opp-health,
+#opp-health-value {
+    text-align: center;
+}

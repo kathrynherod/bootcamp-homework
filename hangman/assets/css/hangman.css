@@ -1,0 +1,125 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: inline-flex;
+    
+}
+
+li {
+    float: left;
+    margin-left: 10px;
+    font-size: 3vh;
+    justify-content: space-between;
+    text-decoration: underline;
+    font-weight: bold;
+
+}
+
+
+.container {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.left-side {
+    background-color: black;
+    color: white;
+    height: 100vh;
+}
+
+.logo-row {
+    height: 25vh;
+}
+
+.menu-row {
+    height: 50vh;
+    border: 1px solid white;
+}
+
+.menu-item {
+    text-align: center;
+    height: 12.5vh;
+    padding-top: 4.5vh;
+    padding-bottom: 4.5vh;
+    margin:0;
+}
+.designed-by {
+    height: 25vh;
+
+}
+.designed-by-kat {
+    padding-top: 15vh;
+    padding-bottom: 5vh;
+    text-align: center;
+    font-style: italic;  
+}
+.draw-the-game {
+    height: 50vh;
+    
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+.no-padding-right {
+    padding-right: 0px;
+}
+.no-padding-left {
+    padding-left: 0px;
+}
+.platform {
+    height: 50vh;
+}
+.dudes-head {
+    max-height: 14vh;
+}
+.dudes-body {
+    max-height: 20vh;
+}
+.dudes-left-leg {
+    max-height: 14vh;
+    float: right;
+}
+.dudes-right-leg {
+    max-height: 14vh;
+    float: left;
+}
+.top-row-instructions {
+    height: 30vh;
+}
+.instructions {
+    height: 10vh;
+    text-align: center;
+}
+.blanks {
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+    height: 20vh;
+   
+    text-align: center;
+    display: inline-block!important;
+}
+.vowel-box {
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightgray;
+}
+.vowel-box:hover { 
+    background-color: yellow;
+}
+#play-again {
+    text-align: center;
+}
+.play-again-yes {
+    border: 1px solid black;
+    background-color: lightgreen;
+}
+.play-again-no {
+    border: 1px solid black;
+    background-color: #F7694F;
+}

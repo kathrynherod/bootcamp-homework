@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--always put meta name when I use @media -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hangman</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/hangman.css" />
+</head>
+
+<body onLoad="hangmanGame.hideTheseThingsOnPageLoad()">
+    <div class="container">
+        <div class="row">
+            <!----------LEFT PANEL OF GAME-------->
+            <div class="col-md-6 col-sm-12 col-xs-12 left-side">
+                <div class="row logo-row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 ">
+                        <img src="assets/imgs/hangman-logo.png" class="img-responsive center-block" />
+                    </div>
+                </div>
+                <div class="row" id="hide-menu">
+                    <div class="col-md-offset-2 col-md-8 col-md-offset-2 col-sm-offset-2 col-sm-8 col-sm-offset-2 col-xs-offset-2 col-xs-8 col-xs-offset-2">
+                        <div class="row menu-row ">
+                            <div class="col-md-12">
+                                <h3 class="menu-item">Select a game mode:</h3></div>
+                            <div class="col-md-12">
+                                <h4 style="cursor:pointer;" id="easy" value="easy1" class="menu-item" onclick="hangmanGame.startTheGame()">Easy</h4></div>
+                            <div class="col-md-12">
+                                <h4 style="cursor:pointer;" id="medium" value="medium1" class="menu-item" onclick="hangmanGame.startTheGame()">Medium</h4></div>
+                            <div class="col-md-12">
+                                <h4 style="cursor:pointer;" id="hard" value="medium1" class="menu-item" onclick="hangmanGame.startTheGame()">Hard</h4></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row " id="show-game" onload="hideThis();">
+                    <div class="col-md-12 draw-the-game">
+                        <div class="row ">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="assets/imgs/dudes-head.png" class="img-responsive center-block dudes-head" id="dudes-head" />
+                                <img src="assets/imgs/dead-face.png" class="img-responsive center-block dudes-head" id="dudes-head-dead" />
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-4">
+                                <img src="assets/imgs/dudes-body.png" class="img-responsive center-block dudes-body" id="dudes-body" />
+                                <img src="assets/imgs/body-left-arm.png" class="img-responsive center-block dudes-body" id="dudes-left-arm" />
+                                <img src="assets/imgs/body-both-arms.png" class="img-responsive center-block dudes-body" id="dudes-arms" />
+                            </div>
+                            <div class="col-md-4">
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 no-padding-right">
+                                <img src="assets/imgs/dudes-left-leg.png" class="dudes-left-leg img-responsive" id="dudes-left-leg" />
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-4 no-padding-left">
+                                <img src="assets/imgs/dudes-right-leg.png" class="dudes-right-leg img-responsive" id="dudes-right-leg" />
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                            </div>
+                        </div>
+                        <!--<div class="col-md-offset-4 col-md-4 col-md-offset-4 col-sm-offset-4 col-sm-4 col-sm-offset-4 col-xs-offset-4 col-xs-4 col-xs-offset-4 dudes-head">
+                    <img src="assets/imgs/dudes-body.png" class="img-responsive center-block" />
+                    </div>-->
+                    </div>
+                </div>
+                <div class="row" class="designed-by">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <p class="designed-by-kat">Designed by Kathryn Herod Ⓒ 2017</p>
+                    </div>
+                </div>
+            </div>
+            <!----------RIGHT PANEL OF GAME-------->
+            <div class="col-md-6 col-sm-12 col-xs-12 right-side">
+                <!----------INSTRUCTIONS-------->
+                <div class="row top-row-instructions">
+                    <h2 class="instructions"><span id="wordTime"></span></h2>
+                    <h3 class="instructions"><span id="wordLength"></span></h3>
+                    <h4 class="instructions"><span id="guessesLeft"></span></h4>
+                </div>
+                <!----------WORD/BLANKS AREA-------->
+                <div class="row blanks-area">
+                    <div class="col-md-1"></div>
+                    <div class="blanks col-md-10" id="Display-Blanks"></div>
+                    <div class="col-md-1"></div>
+                </div>
+                <div class="row keyboard">
+                    <!----------KEYBOARD AREA-------->
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="keyboard-inner">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3>Vowels:</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 style="cursor:pointer;" id="a" value="a" class="vowel-box" onclick="hangmanGame.letterGuessed()">a</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="e" value="e" class="vowel-box">e</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="i" value="i" class="vowel-box">i</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="o" value="o" class="vowel-box">o</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="u" value="u" class="vowel-box">u</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                <h3>Consonants:</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="q" value="q" class="vowel-box">q</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="w" value="w" class="vowel-box">w</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="r" value="r" class="vowel-box">r</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="t" value="t" class="vowel-box">t</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="y" value="y" class="vowel-box">y</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="p" value="p" class="vowel-box">p</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="s" value="s" class="vowel-box">s</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="d" value="d" class="vowel-box">d</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="f" value="f" class="vowel-box">f</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="g" value="g" class="vowel-box">g</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="h" value="h" class="vowel-box">h</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="j" value="j" class="vowel-box">j</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="k" value="k" class="vowel-box">k</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="l" value="l" class="vowel-box">l</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="z" value="z" class="vowel-box">z</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="x" value="x" class="vowel-box">x</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="c" value="c" class="vowel-box">c</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="v" value="v" class="vowel-box">v</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="b" value="b" class="vowel-box">b</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="n" value="n" class="vowel-box">n</h3>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2">
+                                <h3 onclick="hangmanGame.letterGuessed()" style="cursor:pointer;" id="m" value="m" class="vowel-box">m</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!----------PLAY AGAIN? AREA-------->
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="play-again">
+                        <div class="row">
+                            <h3>Do you want to play again?</h3>
+                        </div>
+                        <div class="row">
+                        	<div class="col-md-2 col-sm-2 col-xs-2"></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3" id="yes-play">
+                                <div class="row">
+                                    <h3 onclick="hangmanGame.playGameAgain()" style="cursor:pointer;" id="yes" value="yes" class="play-again-yes">Yes</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3" id="no-play">
+                                <div class="row">
+                                    <h3 onclick="hangmanGame.playGameAgain()" style="cursor:pointer;" id="no" value="no" class="play-again-no">No</h3>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/hangman.js"></script>
+</body>
+
+</html>
