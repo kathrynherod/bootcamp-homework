@@ -2,24 +2,17 @@
  var fight = {
 
      //initialize functions
+
      init: function() {
          var initialRender = true;
          var clicked = "";
 
          $("body").on("click", ".btn", function() {
-
              clicked = $(this).attr("id");
-
-             //console.log(clicked);
-
              fight.handleClicks(clicked);
-
          });
 
          this.renderDom();
-
-
-         //this.handleClicks(clickedBtn);
      },
 
      //write html to DOM
@@ -54,22 +47,33 @@
          }
 
          initialRender = false;
+
      },
 
      //click handlers
-     handleClicks: function(getClicked) {
-         console.log(getClicked);
+
+     handleClicks: function(getClicked, attacker, opponent) {
+         var clickCounter = 0;
+         var attacker = "";
+         var opponent = "";
 
          if (getClicked === "chooseBtn1" || getClicked === "chooseBtn2" || getClicked === "chooseBtn3" || getClicked === "chooseBtn4") {
-
-
              this.makeAttacker(getClicked);
          }
 
+
          if (getClicked === "trumpBtn" || getClicked === "pussyBtn" || getClicked === "hombreBtn" || getClicked === "mikaBtn") {
-             console.log('working');
              this.createDef1(getClicked);
          }
+
+         if (getClicked === "attackBtn") {
+             //console.log(attacker + opponent);
+             this.attack();
+         }
+
+       
+
+
      },
 
      makeAttacker: function(picked) {
@@ -147,7 +151,6 @@
 
      createDef1: function(picked) {
 
-         console.log(picked);
          $("#charInstructions").text("Opponents Remaining");
          var colMd6 = "col-md-6 col-sm-6 col-xs-6";
          var colMd3 = "col-md-3 col-sm-3 col-xs-3";
@@ -157,6 +160,7 @@
          var selectedID = "";
          var notSelectedIDs = [""];
          $("#opp-health").append("Opponent's Health");
+         opponent = picked;
 
          $("img, #opponentImg").removeClass("img-sz-4").addClass("img-sz-6");
 
@@ -199,7 +203,24 @@
 
              $("#opp-health-value").text(characters.c4.health);
          }
+         $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='attackBtn'>Attack the Enemy</button>");
+
          $("#attack-button").show();
+         return opponent;
+
+     },
+
+
+
+     attack: function() {
+         var attackerHealth = parseInt($("#your-health-value").text());
+         var oppHealth = $("#opp-health-value").text();
+         
+
+         if (attackerHealth > 0) {
+         	console.log("testing");
+         }
+
      }
  }
 
