@@ -70,16 +70,17 @@ p {
     text-align: center;
 }
 
-#attack-1,
+/*#attack-1,
 #attack-4 {
-    margin: 5vh 0vw 5vh 0vw;
+    margin: 2vh 0vw 5vh 0vw;
     ;
-    padding: 5vh 0vw 5vh 0vw;
-}
+    padding: 2vh 0vw 5vh 0vw;
+}*/
 
-#attackBtn {
-    margin-top: 10px;
-    margin-bottom: 3vh;
+#attackBtn, #playAgainYes, #playAgainNo {
+    margin: 10px 1vw 3vh 1vw;
+    
+
 }
 
 #charInstructions {
@@ -95,4 +96,8 @@ p {
 #opp-health,
 #opp-health-value {
     text-align: center;
+}
+
+#loser {
+    margin-top: 3vh;
 }
