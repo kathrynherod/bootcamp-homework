@@ -1,0 +1,54 @@
+* {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.game-container {
+  border: 1px solid black;
+  height: 100vh;
+}
+#game-heading {
+  height: 10vh;
+  text-align: center;
+}
+#progress-area {
+  height: 10vh;
+}
+.progress {
+  margin-top: 4vh;
+}
+#question-row {
+  height: 10vh;
+  text-align: center;
+}
+.answer-container {
+  width: 100%;
+  
+  height: 50vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
+#answer1, #answer2, #answer3, #answer4 {
+  height:12.5vh;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+  border: 1px solid black;
+}
+#timer-holder {
+  height: 10vh;
+  padding-top: 2vh;
+}
+#timer-text{
+  text-align: right;
+  height: 5vh;
+}
+#timer {
+  text-align: center;
+}
+#seconds {
+  margin-left: -15px;
+}
+#stats {
+  height: 10vh;
+  text-align: center; 
+}

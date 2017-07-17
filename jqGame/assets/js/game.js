@@ -55,13 +55,13 @@
              //console.log(attacker + opponent);
              enemies.makePeeps();
          }
-         if (getClicked === "playAgainYes"){
-         	location.reload();
+         if (getClicked === "playAgainYes") {
+             location.reload();
          }
          if (getClicked === "playAgainNo") {
-         	$("#playAgainYes").hide();
-         	$("#playAgainNo").hide();
-         	$("#attack-button").append("<h2 id='loser'>Fine, you loser!</h2>");
+             $("#playAgainYes").hide();
+             $("#playAgainNo").hide();
+             $("#attack-button").append("<h2 id='loser'>Fine, you loser!</h2>");
          }
 
      },
@@ -148,7 +148,7 @@
              $(selectedID).remove();
              notSelectedIDs = ["#2", "#3", "#4"];
              $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media.giphy.com/media/CrcVLCRcwXJmg/giphy.gif").removeClass("img-sz-6").attr("id", "trump");
+             $("#opp").attr("src", "https://media.giphy.com/media/CrcVLCRcwXJmg/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
              $("#opp-health-value").text(characters.c1.health);
          }
          //if pussy chosen
@@ -157,7 +157,7 @@
              $(selectedID).remove();
              notSelectedIDs = ["#1", "#3", "#4"];
              $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif").removeClass("img-sz-6").attr("id", "pussy");
+             $("#opp").attr("src", "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
              $("#opp-health-value").text(characters.c2.health);
          }
          //if hombre chosen
@@ -166,37 +166,34 @@
              $(selectedID).remove();
              notSelectedIDs = ["#2", "#1", "#4"];
              $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif").removeClass("img-sz-6").attr("id", "hombre");
+             $("#opp").attr("src", "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
              $("#opp-health-value").text(characters.c3.health);
-         } else if (picked === "mikaBtn") {
+         }
+         // if mika chosen
+         else if (picked === "mikaBtn") {
              selectedID = "#4";
              $(selectedID).remove();
              notSelectedIDs = ["#2", "#3", "#1"];
              $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif").removeClass("img-sz-6").attr("id", "mika");
+             $("#opp").attr("src", "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
              $("#opp-health-value").text(characters.c4.health);
          }
          $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='attackBtn'>Attack the Enemy</button>");
          $("#attack-button").show();
      },
      attack: function(attacker, defender) {
-         //$("#your-attack").text("Your Attack Power");
-         //$("#opp-attack").text("Opponent's Attack Power");
-         $("#your-health-value").text(attacker.health);
-         //$("#your-attack-value").text(attacker.attack);
-         $("#opp-health-value").text(defender.health);
-         //$("#opp-attack-value").text(defender.attack);
+
 
          if (attacker.health > 0) {
-
-             $("#your-attack").text("Your Attack Power");
-             $("#opp-attack").text("Opponent's Attack Power");
-             $("#your-health-value").text(attacker.health);
-             $("#your-attack-value").text(attacker.attack);
-             $("#opp-health-value").text(defender.health);
-             $("#opp-attack-value").text(defender.attack);
              attacker.health = attacker.health - defender.attack;
              defender.health = defender.health - attacker.attack;
+             $("#your-health-value").text(attacker.health);
+             $("#opp-health-value").text(defender.health);
+             $("#your-attack").text("Your Attack Power");
+             $("#opp-attack").text("Opponent's Attack Power");
+             $("#your-attack-value").text(attacker.attack);
+             $("#opp-attack-value").text(defender.attack);
+
              attacker.attack = (attacker.attack * 2);
              defender.attack = (defender.attack * 2);
 
@@ -204,17 +201,19 @@
                  console.log("defeated");
                  $("#charInstructions").text("Choose your next Opponent");
                  $(".btn-primary").show();
+                 $("#attack-3").hide();
+                 $("#attack-4").hide();
+
 
              }
-         }
-         else if (attacker.health <=0) {
+         } else if (attacker.health <= 0) {
 
-         	console.log("YOU LOSE")
-         	$("#attackBtn").hide();
-         	$(".row-3").remove();
-         	$("#player-section").replaceWith("<div class='row' id='play-again'><div class='col-md-12 col-sm-12 col-xs12'><h3>You lost! Want to play again?</h3><br><img src='https://media.tenor.com/images/de67d070aa53aa72e6eb3c22094b47f4/tenor.gif'/></div></div>");
-         	$("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='playAgainYes'>Yes</button><button type='button' class='btn btn-primary center-block' id='playAgainNo'>No</button>");
-         	//$("#attack-button").show();
+             console.log("YOU LOSE")
+             $("#attackBtn").hide();
+             $(".row-3").remove();
+             $("#player-section").replaceWith("<div class='row' id='play-again'><div class='col-md-12 col-sm-12 col-xs12'><h3>You lost! Want to play again?</h3><br><img src='https://media.tenor.com/images/de67d070aa53aa72e6eb3c22094b47f4/tenor.gif'/></div></div>");
+             $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='playAgainYes'>Yes</button><button type='button' class='btn btn-primary center-block' id='playAgainNo'>No</button>");
+             //$("#attack-button").show();
          }
 
 
