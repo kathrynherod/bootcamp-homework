@@ -201,7 +201,7 @@ var triviaGame = {
             $("#game-result").text("Awesome Job! I'm shocked");
             $("#img-result").attr("src", "http://49.media.tumblr.com/5bf67f51efbf78051dd5d100b50f564f/tumblr_nypawv1gHl1rerytio1_500.gif");
         }
-        if (correct > 7 && correct < 10) {
+        if (correct >= 7 && correct < 10) {
             $("#game-result").text("Not quite good enough!");
             $("#img-result").attr("src", "http://i.imgur.com/VAhyEDw.gif");
 
