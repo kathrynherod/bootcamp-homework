@@ -74,9 +74,6 @@ var triviaGame = {
             $("#playagainyes-btn").hide();
             $("#playagainno-btn").hide();
             $("#img-result").attr("src", "https://media.tenor.com/images/2351748403da2d948da2271af3e57766/tenor.gif");
-
-
-
         }
     },
     initialDom: function(correct, wrong, missed) {
@@ -191,7 +188,7 @@ var triviaGame = {
         $("#progress-area").hide();
         $("#questions").text("Game Over! Here are your stats");
         $("#game-photo").hide();
-        $(".stats-row").attr("style", "margin-top: -12.5vh");
+        //$(".stats-row").attr("style", "margin-top: -12.5vh");
         $("#stats-correct-value").attr("style", "margin-top: -10vh!important");
         $("#stats-wrong-value").attr("style", "margin-top: -10vh!important");
         $("#stats-missed-value").attr("style", "margin-top: -10vh!important");
