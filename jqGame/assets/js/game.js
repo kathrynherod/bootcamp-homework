@@ -44,16 +44,19 @@
          var clickCounter = 0;
          var attacker = "";
          var opponent = "";
+         var defenderCount = 0;
          if (getClicked === "chooseBtn1" || getClicked === "chooseBtn2" || getClicked === "chooseBtn3" || getClicked === "chooseBtn4") {
              this.makeAttacker(getClicked);
          }
 
          if (getClicked === "trumpBtn" || getClicked === "pussyBtn" || getClicked === "hombreBtn" || getClicked === "mikaBtn") {
-             this.createDef1(getClicked);
+             defenderCount++;
+             this.createDef1(getClicked, defenderCount);
+
          }
          if (getClicked === "attackBtn") {
              //console.log(attacker + opponent);
-             enemies.makePeeps();
+             this.makePeeps();
          }
          if (getClicked === "playAgainYes") {
              location.reload();
@@ -79,6 +82,7 @@
          var newPussyBtn = "<button type='button' class='btn btn-primary center-block new-buttons' id='pussyBtn'>Battle Pussy</button>";
          var newHombreBtn = "<button type='button' class='btn btn-primary center-block new-buttons' id='hombreBtn'>Battle Hombre</button>";
          var newMikaBtn = "<button type='button' class='btn btn-primary center-block new-buttons' id='mikaBtn'>Battle Mika</button>";
+         $("#your-attack").text("Your Attack Power");
          //if trump
          if (picked === "chooseBtn1") {
              selectedID = "#1";
@@ -91,6 +95,7 @@
              $("#health3").after(newHombreBtn);
              $("#health4").after(newMikaBtn);
              $("#your-health-value").text(characters.c1.health);
+             $("#your-attack-value").text(characters.c1.attack);
          }
          //if pussy
          else if (picked === "chooseBtn2") {
@@ -104,6 +109,7 @@
              $("#health3").after(newHombreBtn);
              $("#health4").after(newMikaBtn);
              $("#your-health-value").text(characters.c2.health);
+             $("#your-attack-value").text(characters.c2.attack);
          }
          //if hombre 
          else if (picked === "chooseBtn3") {
@@ -117,6 +123,7 @@
              $("#health2").after(newPussyBtn);
              $("#health4").after(newMikaBtn);
              $("#your-health-value").text(characters.c3.health);
+             $("#your-attack-value").text(characters.c3.attack);
          } //if mika 
          else if (picked === "chooseBtn4") {
              selectedID = "#4";
@@ -129,126 +136,175 @@
              $("#health2").after(newPussyBtn);
              $("#health3").after(newHombreBtn);
              $("#your-health-value").text(characters.c4.health);
+             $("#your-attack-value").text(characters.c4.attack);
          }
      },
-     createDef1: function(picked) {
-         $("#charInstructions").text("Opponents Remaining");
-         var colMd6 = "col-md-6 col-sm-6 col-xs-6";
-         var colMd3 = "col-md-3 col-sm-3 col-xs-3";
-         var colMd4 = "col-md-4 col-sm-4 col-xs-4";
-         var healthID = "";
-         $(".btn").hide();
-         var selectedID = "";
-         var notSelectedIDs = [""];
-         $("#opp-health").append("Opponent's Health");
-         opponent = picked;
-         $("img, #opponentImg").removeClass("img-sz-4").addClass("img-sz-6");
-         if (picked === "trumpBtn") {
-             selectedID = "#1";
-             $(selectedID).remove();
-             notSelectedIDs = ["#2", "#3", "#4"];
-             $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media.giphy.com/media/CrcVLCRcwXJmg/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
-             $("#opp-health-value").text(characters.c1.health);
+     createDef1: function(picked, defNum) {
+         $("#opp-attack").text("Opponent's Attack Power");
+         var defNum = parseInt($("#defNum").text())
+
+         if (defNum === 2) {
+             console.log("defender 2");
+             $("#opp-health").show();
+             $("#opp-attack").show();
+
+             if (picked === "trumpBtn") {
+                 $("#opp").attr("src", "https://media.giphy.com/media/CrcVLCRcwXJmg/giphy.gif").attr("id", "trump");
+                 $("#opp-health-value").text(characters.c1.health);
+                 $("#opp-attack-value").text(characters.c1.attack);
+             } else if (picked === "pussyBtn") {
+                 $("#opp").attr("src", "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif").attr("id", "pussy");
+                 $("#opp-health-value").text(characters.c2.health);
+                 $("#opp-attack-value").text(characters.c2.attack);
+
+             } else if (picked === "hombreBtn") {
+                 $("#opp").attr("src", "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif").attr("id", "hombre");
+                 $("#opp-health-value").text(characters.c3.health);
+                 $("#opp-attack-value").text(characters.c3.attack);
+
+             } else if (picked === "mikaBtn") {
+                 $("#opp").attr("src", "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif").attr("id", "mika");
+                 $("#opp-health-value").text(characters.c4.health);
+                 $("#opp-attack-value").text(characters.c4.attack);
+             }
+
+         } else {
+
+             $("#charInstructions").text("Opponents Remaining");
+             var colMd6 = "col-md-6 col-sm-6 col-xs-6";
+             var colMd3 = "col-md-3 col-sm-3 col-xs-3";
+             var colMd4 = "col-md-4 col-sm-4 col-xs-4";
+             var healthID = "";
+             $(".btn").hide();
+             var selectedID = "";
+             var notSelectedIDs = [""];
+             $("#opp-health").append("Opponent's Health");
+             opponent = picked;
+             $("img, #opponentImg").removeClass("img-sz-4").addClass("img-sz-6");
+
+
+
+             if (picked === "trumpBtn") {
+                 selectedID = "#1";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#2", "#3", "#4"];
+                 $(notSelectedIDs).toggleClass(colMd6);
+                 $("#opp").attr("src", "https://media.giphy.com/media/CrcVLCRcwXJmg/giphy.gif").removeClass("img-sz-6").attr("id", "trump");
+                 $("#opp-health-value").text(characters.c1.health);
+                 $("#opp-attack-value").text(characters.c1.attack);
+             }
+             //if pussy chosen
+             else if (picked === "pussyBtn") {
+                 selectedID = "#2";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#1", "#3", "#4"];
+                 $(notSelectedIDs).toggleClass(colMd6);
+                 $("#opp").attr("src", "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif").removeClass("img-sz-6").attr("id", "pussy");
+                 $("#opp-health-value").text(characters.c2.health);
+                 $("#opp-attack-value").text(characters.c2.attack);
+             }
+             //if hombre chosen
+             else if (picked === "hombreBtn") {
+                 selectedID = "#3";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#2", "#1", "#4"];
+                 $(notSelectedIDs).toggleClass(colMd6);
+                 $("#opp").attr("src", "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif").removeClass("img-sz-6").attr("id", "hombre");
+                 $("#opp-health-value").text(characters.c3.health);
+                 $("#opp-attack-value").text(characters.c3.attack);
+             }
+             // if mika chosen
+             else if (picked === "mikaBtn") {
+                 selectedID = "#4";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#2", "#3", "#1"];
+                 $(notSelectedIDs).toggleClass(colMd6);
+                 $("#opp").attr("src", "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif").removeClass("img-sz-6").attr("id", "mika");
+                 $("#opp-health-value").text(characters.c4.health);
+                 $("#opp-attack-value").text(characters.c4.attack);
+             }
+             $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='attackBtn'>Attack the Enemy</button>");
+             $("#attack-button").show();
          }
-         //if pussy chosen
-         else if (picked === "pussyBtn") {
-             selectedID = "#2";
-             $(selectedID).remove();
-             notSelectedIDs = ["#1", "#3", "#4"];
-             $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
-             $("#opp-health-value").text(characters.c2.health);
-         }
-         //if hombre chosen
-         else if (picked === "hombreBtn") {
-             selectedID = "#3";
-             $(selectedID).remove();
-             notSelectedIDs = ["#2", "#1", "#4"];
-             $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
-             $("#opp-health-value").text(characters.c3.health);
-         }
-         // if mika chosen
-         else if (picked === "mikaBtn") {
-             selectedID = "#4";
-             $(selectedID).remove();
-             notSelectedIDs = ["#2", "#3", "#1"];
-             $(notSelectedIDs).toggleClass(colMd6);
-             $("#opp").attr("src", "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif").removeClass("img-sz-6").attr("id", "def1");
-             $("#opp-health-value").text(characters.c4.health);
-         }
-         $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='attackBtn'>Attack the Enemy</button>");
-         $("#attack-button").show();
+
+
+
+
+
      },
+     makePeeps: function() {
+
+         var you = $(".you").attr("id");
+
+         if (you === "trump") {
+             this.you = characters.c1;
+         } else if (you === "pussy") {
+             this.you = characters.c2;
+         } else if (you === "hombre") {
+             this.you = characters.c3;
+         } else if (you === "mika") {
+             this.you = characters.c4;
+         }
+
+         var opp = $(".opp").attr("id");
+
+         if (opp === "trump") {
+             this.opp = characters.c1;
+         } else if (opp === "pussy") {
+             this.opp = characters.c2;
+         } else if (opp === "hombre") {
+             this.opp = characters.c3;
+         } else if (opp === "mika") {
+             this.opp = characters.c4;
+         }
+
+         this.attack(this.you, this.opp);
+     },
+
      attack: function(attacker, defender) {
 
 
+
          if (attacker.health > 0) {
+
              attacker.health = attacker.health - defender.attack;
              defender.health = defender.health - attacker.attack;
              $("#your-health-value").text(attacker.health);
              $("#opp-health-value").text(defender.health);
-             $("#your-attack").text("Your Attack Power");
-             $("#opp-attack").text("Opponent's Attack Power");
-             $("#your-attack-value").text(attacker.attack);
-             $("#opp-attack-value").text(defender.attack);
+
 
              attacker.attack = (attacker.attack * 2);
              defender.attack = (defender.attack * 2);
+             $("#your-attack-value").text(attacker.attack);
+             $("#opp-attack-value").text(defender.attack);
 
              if (defender.health <= 0) {
                  console.log("defeated");
-                 $("#charInstructions").text("Choose your next Opponent");
+                 $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='defNum'>" + 2 + "</span>nd Opponent");
                  $(".btn-primary").show();
-                 $("#attack-3").hide();
-                 $("#attack-4").hide();
-
-
+                 $("#" + defender.name).removeAttr("src");
+                 $("#" + defender.name).attr("id", "opp");
+                 $("#opp-health").hide();
+                 $("#opp-attack").hide();
+                 $("#opp-health-value").text("");
+                 $("#opp-attack-value").text("");
              }
-         } else if (attacker.health <= 0) {
+             if (attacker.health <= 0) {
 
-             console.log("YOU LOSE")
-             $("#attackBtn").hide();
-             $(".row-3").remove();
-             $("#player-section").replaceWith("<div class='row' id='play-again'><div class='col-md-12 col-sm-12 col-xs12'><h3>You lost! Want to play again?</h3><br><img src='https://media.tenor.com/images/de67d070aa53aa72e6eb3c22094b47f4/tenor.gif'/></div></div>");
-             $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='playAgainYes'>Yes</button><button type='button' class='btn btn-primary center-block' id='playAgainNo'>No</button>");
-             //$("#attack-button").show();
+                 console.log("YOU LOSE")
+                 $("#attackBtn").hide();
+                 $(".row-3").remove();
+                 $("#player-section").replaceWith("<div class='row' id='play-again'><div class='col-md-12 col-sm-12 col-xs12'><h3>You lost! Want to play again?</h3><br><img src='https://media.tenor.com/images/de67d070aa53aa72e6eb3c22094b47f4/tenor.gif'/></div></div>");
+                 $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='playAgainYes'>Yes</button><button type='button' class='btn btn-primary center-block' id='playAgainNo'>No</button>");
+                 //$("#attack-button").show();
+             }
+
          }
-
-
-
      }
  }
- var enemies = {
-         makePeeps: function() {
-             var you = $(".you").attr("id");
 
-             if (you === "trump") {
-                 this.you = characters.c1;
-             } else if (you === "pussy") {
-                 this.you = characters.c2;
-             } else if (you === "hombre") {
-                 this.you = characters.c3;
-             } else if (you === "mika") {
-                 this.you = characters.c4;
-             }
 
-             var opp = $(".opp").attr("id");
-
-             if (opp === "trump") {
-                 this.opp = characters.c1;
-             } else if (opp === "pussy") {
-                 this.opp = characters.c2;
-             } else if (opp === "hombre") {
-                 this.opp = characters.c3;
-             } else if (opp === "mika") {
-                 this.opp = characters.c4;
-             }
-             fight.attack(this.you, this.opp);
-         }
-     }
-     //character1-4 objects
+ //character1-4 objects
  var characters = {
      c1: {
          colID: 1,
