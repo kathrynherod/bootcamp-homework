@@ -51,11 +51,14 @@
 
          if (getClicked === "trumpBtn" || getClicked === "pussyBtn" || getClicked === "hombreBtn" || getClicked === "mikaBtn") {
              defenderCount++;
+             $("#opp-health").show();
+             $("#opp-attack").show();
              this.createDef1(getClicked, defenderCount);
 
          }
          if (getClicked === "attackBtn") {
              //console.log(attacker + opponent);
+
              this.makePeeps();
          }
          if (getClicked === "playAgainYes") {
@@ -146,9 +149,9 @@
          var colMd6 = "col-md-6 col-sm-6 col-xs-6";
          var colMd3 = "col-md-3 col-sm-3 col-xs-3";
          var colMd4 = "col-md-4 col-sm-4 col-xs-4";
-         ;
 
-         if (defNum === 2) {
+
+         if (defNum >= 2) {
              $(".row-3").attr("id", "final")
              $("#charInstructions").text("Opponents Remaining");
              console.log("defender 2");
@@ -201,7 +204,7 @@
              $(".btn").hide();
              var selectedID = "";
              var notSelectedIDs = [""];
-             $("#opp-health").append("Opponent's Health");
+             $("#opp-health").text("Opponent's Health");
              opponent = picked;
              $("img, #opponentImg").removeClass("img-sz-4").addClass("img-sz-6");
 
@@ -247,11 +250,7 @@
              $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='attackBtn'>Attack the Enemy</button>");
              $("#attack-button").show();
          }
-         var testing123 = $("span").is("#finalOpp");
-         console.log(testing123)
-         if($("#finalOpp").text()==="FINAL"){
-            console.log("working")
-         }
+
 
      },
      makePeeps: function() {
@@ -284,10 +283,8 @@
      },
 
      attack: function(attacker, defender) {
-         
-         var holdValue = $(".row-3").is("#final");
-         console.log(holdValue);
 
+         var holdValue = $(".row-3").is("#final");
 
          if (attacker.health > 0) {
 
@@ -300,6 +297,13 @@
              $("#your-attack-value").text(attacker.attack);
              $("#opp-attack-value").text(defender.attack);
 
+             //testing win the game
+             var finalRound = $(".finalRound").is("#player-section");
+             console.log(finalRound);
+             if (finalRound === true) {
+                 this.winGame();
+             }
+
              if (defender.health <= 0) {
                  if (defender.name === "Fake News Reporter") {
                      defender.name = "mika";
@@ -308,12 +312,11 @@
                      defender.name = "hombre";
                  }
 
-                 if (holdValue===true) {
-                    $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='finalOpp'>FINAL</span> Opponent");
-
-                 }
-                 else {
-                 $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='defenderNumber'>" + 2 + "</span>nd Opponent");
+                 if (holdValue === true) {
+                     $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span class='strong' id='finalOpp'>FINAL</span> Opponent");
+                     $("#player-section").addClass("finalRound");
+                 } else  {
+                     $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='defenderNumber'>" + 2 + "</span>nd Opponent");
                  }
                  $(".btn-primary").show();
                  $("#" + defender.name).removeAttr("src");
@@ -335,6 +338,13 @@
              }
 
          }
+     },
+     winGame: function() {
+         $("#attack-button").show();
+         $(".row-3").remove();
+         $("#player-section").replaceWith("<div class='row' id='play-again'><div class='col-md-12 col-sm-12 col-xs12'><h3>You WON!!!!! Want to play again?</h3><br><img id='winwin' src='http://meowgifs.com/wp-content/uploads/2013/02/dancing_cat.gif'/></div></div>");
+         $("#winwin").after("<button type='button' class='btn btn-primary center-block' id='playAgainYes'>Yes</button><button type='button' class='btn btn-primary center-block' id='playAgainNo'>No</button>");
+       
      }
  }
 
