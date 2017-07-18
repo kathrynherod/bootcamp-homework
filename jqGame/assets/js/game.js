@@ -141,28 +141,53 @@
      },
      createDef1: function(picked, defNum) {
          $("#opp-attack").text("Opponent's Attack Power");
-         var defNum = parseInt($("#defNum").text())
+         var defNum = parseInt($("#defenderNumber").text())
+         var colMd12 = "col-md-12 col-sm-12 col-xs-12";
+         var colMd6 = "col-md-6 col-sm-6 col-xs-6";
+         var colMd3 = "col-md-3 col-sm-3 col-xs-3";
+         var colMd4 = "col-md-4 col-sm-4 col-xs-4";
+         ;
 
          if (defNum === 2) {
+             $(".row-3").attr("id", "final")
+             $("#charInstructions").text("Opponents Remaining");
              console.log("defender 2");
              $("#opp-health").show();
              $("#opp-attack").show();
+             $("#attack-button").show();
+             $("img, #opponentImg").removeClass("img-sz-6").addClass("img-sz-12");
 
              if (picked === "trumpBtn") {
+                 selectedID = "#1";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#2", "#3", "#4"];
+                 $(notSelectedIDs).toggleClass(colMd12);
                  $("#opp").attr("src", "https://media.giphy.com/media/CrcVLCRcwXJmg/giphy.gif").attr("id", "trump");
                  $("#opp-health-value").text(characters.c1.health);
                  $("#opp-attack-value").text(characters.c1.attack);
              } else if (picked === "pussyBtn") {
+                 selectedID = "#2";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#1", "#3", "#4"];
+                 $(notSelectedIDs).toggleClass(colMd12);
                  $("#opp").attr("src", "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif").attr("id", "pussy");
                  $("#opp-health-value").text(characters.c2.health);
                  $("#opp-attack-value").text(characters.c2.attack);
 
              } else if (picked === "hombreBtn") {
+                 selectedID = "#3";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#2", "#1", "#4"];
+                 $(notSelectedIDs).toggleClass(colMd12);
                  $("#opp").attr("src", "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif").attr("id", "hombre");
                  $("#opp-health-value").text(characters.c3.health);
                  $("#opp-attack-value").text(characters.c3.attack);
 
              } else if (picked === "mikaBtn") {
+                 selectedID = "#4";
+                 $(selectedID).remove();
+                 notSelectedIDs = ["#2", "#3", "#1"];
+                 $(notSelectedIDs).toggleClass(colMd12);
                  $("#opp").attr("src", "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif").attr("id", "mika");
                  $("#opp-health-value").text(characters.c4.health);
                  $("#opp-attack-value").text(characters.c4.attack);
@@ -171,9 +196,7 @@
          } else {
 
              $("#charInstructions").text("Opponents Remaining");
-             var colMd6 = "col-md-6 col-sm-6 col-xs-6";
-             var colMd3 = "col-md-3 col-sm-3 col-xs-3";
-             var colMd4 = "col-md-4 col-sm-4 col-xs-4";
+
              var healthID = "";
              $(".btn").hide();
              var selectedID = "";
@@ -181,8 +204,6 @@
              $("#opp-health").append("Opponent's Health");
              opponent = picked;
              $("img, #opponentImg").removeClass("img-sz-4").addClass("img-sz-6");
-
-
 
              if (picked === "trumpBtn") {
                  selectedID = "#1";
@@ -226,10 +247,11 @@
              $("#attack-button").append("<button type='button' class='btn btn-primary center-block' id='attackBtn'>Attack the Enemy</button>");
              $("#attack-button").show();
          }
-
-
-
-
+         var testing123 = $("span").is("#finalOpp");
+         console.log(testing123)
+         if($("#finalOpp").text()==="FINAL"){
+            console.log("working")
+         }
 
      },
      makePeeps: function() {
@@ -262,7 +284,9 @@
      },
 
      attack: function(attacker, defender) {
-
+         
+         var holdValue = $(".row-3").is("#final");
+         console.log(holdValue);
 
 
          if (attacker.health > 0) {
@@ -271,16 +295,26 @@
              defender.health = defender.health - attacker.attack;
              $("#your-health-value").text(attacker.health);
              $("#opp-health-value").text(defender.health);
-
-
              attacker.attack = (attacker.attack * 2);
              defender.attack = (defender.attack * 2);
              $("#your-attack-value").text(attacker.attack);
              $("#opp-attack-value").text(defender.attack);
 
              if (defender.health <= 0) {
-                 console.log("defeated");
-                 $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='defNum'>" + 2 + "</span>nd Opponent");
+                 if (defender.name === "Fake News Reporter") {
+                     defender.name = "mika";
+                 }
+                 if (defender.name === "Bad Hombre") {
+                     defender.name = "hombre";
+                 }
+
+                 if (holdValue===true) {
+                    $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='finalOpp'>FINAL</span> Opponent");
+
+                 }
+                 else {
+                 $("#charInstructions").html("You defeated " + defender.name + "! Choose your <span id='defenderNumber'>" + 2 + "</span>nd Opponent");
+                 }
                  $(".btn-primary").show();
                  $("#" + defender.name).removeAttr("src");
                  $("#" + defender.name).attr("id", "opp");
@@ -288,6 +322,7 @@
                  $("#opp-attack").hide();
                  $("#opp-health-value").text("");
                  $("#opp-attack-value").text("");
+                 $("#attack-button").hide();
              }
              if (attacker.health <= 0) {
 
@@ -322,7 +357,7 @@
          imgSrc: "https://media4.giphy.com/media/5i7umUqAOYYEw/giphy.gif",
          buttonText: "Choose Pussy",
          health: 200,
-         attack: 25,
+         attack: 5,
      },
      c3: {
          colID: 3,
@@ -331,7 +366,7 @@
          imgSrc: "https://media.giphy.com/media/j2nYebu8Fc62Y/giphy.gif",
          buttonText: "Choose Bad Hombre",
          health: 150,
-         attack: 17,
+         attack: 4,
      },
      c4: {
          colID: 4,
@@ -340,7 +375,7 @@
          imgSrc: "https://media2.giphy.com/media/JGX6u6mtPD0Oc/giphy.gif",
          buttonText: "Choose Mika",
          health: 130,
-         attack: 10,
+         attack: 3,
 
      }
  }

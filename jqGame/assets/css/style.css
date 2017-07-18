@@ -44,6 +44,12 @@ p {
     margin-right: 12%;
     max-height: 27vh;
 }
+.img-sz-6 {
+    max-width: auto;
+    margin-left: 12%;
+    margin-right: 12%;
+    max-height: 27vh;
+}
 
 .you,
 .opp {
