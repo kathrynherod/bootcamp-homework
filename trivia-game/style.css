@@ -1,6 +1,8 @@
-* {
-    overflow-x: hidden;
-    overflow-y: hidden;
+
+h3, h4 {
+  margin: 0px!important;
+  line-height: 2!important;
+  padding-top: 1vh;
 }
 
 .game-container {
@@ -22,30 +24,47 @@
 }
 
 #question-row {
-    height: 10vh;
+    height: 20vh;
     text-align: center;
 }
 
 .answer-container {
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     padding-left: 10vw;
     padding-right: 10vw;
 }
 
-#answer1,
-#answer2,
-#answer3,
-#answer4 {
+#a1,
+#a2,
+#a3,
+#a0 {
     margin: 0;
-    height: 12.5vh;
+    height: 10vh;
     padding: 4vh 2vw 3vh 2vw;
     border: 1px solid black;
+    cursor: pointer;
+}
+
+#a0:hover {
+    background-color: lightblue;
+}
+
+#a1:hover {
+    background-color: lightblue;
+}
+
+#a2:hover {
+    background-color: lightblue;
+}
+
+#a3:hover {
+    background-color: lightblue;
 }
 
 #timer-holder {
     height: 10vh;
-    padding-top: 2vh;
+    
 }
 
 #timer-text {
@@ -61,7 +80,21 @@
     margin-left: -15px;
 }
 
-#stats {
+.stats-row {
+    border-top: 1px dotted black;
     height: 10vh;
     text-align: center;
+}
+#stats-text {
+  text-align: right;
+}
+#stats-correct-value,#stats-wrong-value,#stats-missed-value{
+  text-align: left;
+}
+#next {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+}
+#game-photo {
+  margin-top: -10vh;
 }

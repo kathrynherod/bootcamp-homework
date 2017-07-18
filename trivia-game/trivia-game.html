@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="bootstrap.css" type="text/css">
 </head>
 
 <body>
@@ -51,28 +52,37 @@
                 <div class="row">
                     <img id="game-photo" class="center-block"></img>
                 </div>
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-2 col-sm-2 col-xs-2 col-md-offset-5">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="continue-btn"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="container answer-container">
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12" >
-                        <h4 id="answer1">answer1</h4>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 id="a0">answer1</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12" >
-                        <h4 id="answer2">answer2</h4>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 id="a1">answer2</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12" >
-                        <h4 id="answer3">answer3</h4>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 id="a2">answer3</h4>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12" >
-                        <h4 id="answer4">answer4</h4>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 id="a3">answer4</h4>
                     </div>
                 </div>
             </div>
@@ -80,18 +90,42 @@
         <!--close answer-container-->
         <div class="row" id="timer-holder">
             <div class="col-md-6 col-sm-6 col-xs-6">
-                <h3 id="timer-text">Time Remaining:</h3>
+                <h4 id="timer-text">Time Remaining:</h4>
             </div>
             <div class="col-md-1 col-sm-1 col-xs-1">
-                <h3 id="timer"></h3>
+                <h4 id="timer"></h4>
             </div>
-             <div class="col-md-5 col-sm-5 col-xs-5">
-                <h3 id="seconds">seconds</h3>
+            <div class="col-md-5 col-sm-5 col-xs-5">
+                <h4 id="seconds">seconds</h4>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12" id="stats">
-                <h3 id="stats-text">Stats</h3>
+        <div class="row stats-row">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <h4 id="stats-text">Correct:</h4>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <h4 id="stats-correct-value"></h4>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <br>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <h4 id="stats-text">Wrong:</h4>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <h4 id="stats-wrong-value"></h4>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <br>
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+                <h4 id="stats-text">Missed:</h4>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <h4 id="stats-missed-value"></h4>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+                <br>
             </div>
         </div>
     </div>
