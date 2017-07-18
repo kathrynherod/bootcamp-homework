@@ -1,8 +1,8 @@
-
-h3, h4 {
-  margin: 0px!important;
-  line-height: 2!important;
-  padding-top: 1vh;
+h3,
+h4 {
+    margin: 0px!important;
+    line-height: 2!important;
+    padding-top: 1vh;
 }
 
 .game-container {
@@ -64,7 +64,6 @@ h3, h4 {
 
 #timer-holder {
     height: 10vh;
-    
 }
 
 #timer-text {
@@ -85,16 +84,29 @@ h3, h4 {
     height: 10vh;
     text-align: center;
 }
-#stats-text {
-  text-align: right;
+
+#stats-text,
+#stats-text2,
+#stats-text3 {
+    text-align: right;
 }
-#stats-correct-value,#stats-wrong-value,#stats-missed-value{
-  text-align: left;
+
+#stats-correct-value,
+#stats-wrong-value,
+#stats-missed-value {
+    text-align: left;
 }
-#next {
-  margin-top: 3vh;
-  margin-bottom: 3vh;
+
+#next,
+#finish {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
 }
+
 #game-photo {
-  margin-top: -10vh;
+    margin-top: -10vh;
 }
+#playagainquestion, #game-result {
+  text-align: center;
+}
+

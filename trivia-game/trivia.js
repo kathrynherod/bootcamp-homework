@@ -1,10 +1,7 @@
 var triviaGame = {
 
     init: function() {
-        $(".stats-row").hide();
-
         //global vars
-
         var questionCount = -1;
         var correct = 0;
         var wrong = 0;
@@ -12,6 +9,7 @@ var triviaGame = {
         var userResponse = "";
         var x = "";
         var progress = "";
+        $(".stats-row").hide();
         this.initialDom(correct, wrong, missed);
         //event listener
         var clicked = "";
@@ -27,7 +25,6 @@ var triviaGame = {
         });
     },
     handleClicks: function(getClicked, questionCount, correct, wrong, missed) {
-
         if (getClicked === "yes") {
             $("#yes-btn").hide();
             $("#no-btn").hide();
@@ -57,8 +54,31 @@ var triviaGame = {
         if (getClicked === "next") {
             this.writeQandA(questionCount);
         }
-    },
+        if (getClicked === "finish") {
+            this.resetGame();
+        }
+        if (getClicked === "playagain-yes") {
+            location.reload();
+        }
+        if (getClicked === "playagain-no") {
+            $("#question-row").hide();
+            $("#stats-row").hide();
+            $("#stats-correct-value").hide();
+            $("#stats-wrong-value").hide();
+            $("#stats-missed-value").hide();
+            $("#stats-text").hide();
+            $("#stats-text2").hide();
+            $("#stats-text3").hide();
+            $("#game-result").hide();
+            $("#playagainquestion").hide();
+            $("#playagainyes-btn").hide();
+            $("#playagainno-btn").hide();
+            $("#img-result").attr("src", "https://media.tenor.com/images/2351748403da2d948da2271af3e57766/tenor.gif");
 
+
+
+        }
+    },
     initialDom: function(correct, wrong, missed) {
         $(".answer-container").hide();
         $("#timer-holder").hide();
@@ -70,7 +90,6 @@ var triviaGame = {
         $("#stats-wrong-value").text(wrong);
         $("#stats-missed-value").text(missed);
     },
-
     writeQandA: function(questionCount) {
         var counter = 30;
         var clock;
@@ -80,9 +99,9 @@ var triviaGame = {
         $(".answer-container").show();
         $(".stats-row").show();
         $("#stats").show();
-        
+
         if (questionCount < questions.length) {
-        	this.timer(counter, clock, questionCount);
+            this.timer(counter, clock, questionCount);
             $('#questions').text("Question " + (n + 1) + ": " + questions[n].question);
             $("#a0").text(questions[n].answers[0]);
             $("#a1").text(questions[n].answers[1]);
@@ -90,11 +109,11 @@ var triviaGame = {
             $("#a3").text(questions[n].answers[3]);
             $("#timer-holder").show();
         } else {
-            resetGame();
+            this.resetGame();
         }
     },
     checkAnswer: function(uR, questionCount, correct, wrong, missed, counter) {
-    	clearInterval(countdown);
+        clearInterval(countdown);
         correct = parseInt($("#stats-correct-value").text());
         wrong = parseInt($("#stats-wrong-value").text());
         missed = parseInt($("#stats-missed-value").text());
@@ -114,8 +133,8 @@ var triviaGame = {
             $("#game-photo").attr("src", "https://media.tenor.com/images/4cf7c083108bdaf001c937adbf83f153/tenor.gif");
             wrong += 1;
         }
-        counter=30;
-        $("#continue-btn").html("<button type='button' id='next' class='btn btn-success'>Next Question</button>");
+        counter = 30;
+
         $("#timer-holder").hide();
         progress = x * 10 + 10;
         $("#update-progress").attr("aria-valuenow", progress);
@@ -124,10 +143,15 @@ var triviaGame = {
         $("#stats-correct-value").text(correct);
         $("#stats-wrong-value").text(wrong);
         $("#stats-missed-value").text(missed);
+        if (questionCount < 9) {
+            $("#continue-btn").html("<button type='button' id='next' class='btn btn-success'>Next Question</button>");
+        } else if (questionCount === 9) {
+            $("#continue-btn").html("<button type='button' id='finish' class='btn btn-success'>Finish Game</button>");
+
+        }
     },
     timesUp: function(questionCount, countdown) {
-    	clearInterval(countdown);
-
+        clearInterval(countdown);
         $("#game-photo").show();
         $("#continue-btn").show();
         x = questionCount;
@@ -160,12 +184,50 @@ var triviaGame = {
                 counter--;
             }
             $("#timer").html(counter);
-            console.log("counter " + counter);
         }
+    },
+    resetGame: function() {
+        $("#finish").hide();
+        $("#progress-area").hide();
+        $("#questions").text("Game Over! Here are your stats");
+        $("#game-photo").hide();
+        $(".stats-row").attr("style", "margin-top: -12.5vh");
+        $("#stats-correct-value").attr("style", "margin-top: -10vh!important");
+        $("#stats-wrong-value").attr("style", "margin-top: -10vh!important");
+        $("#stats-missed-value").attr("style", "margin-top: -10vh!important");
+        $("#stats-text").attr("style", "margin-top: -10vh!important");
+        $("#stats-text2").attr("style", "margin-top: -10vh!important");
+        $("#stats-text3").attr("style", "margin-top: -10vh!important");
+        correct = parseInt($("#stats-correct-value").text());
+        console.log(correct);
+        if (correct === 10) {
+            $("#game-result").text("Awesome Job! I'm shocked");
+            $("#img-result").attr("src", "http://49.media.tumblr.com/5bf67f51efbf78051dd5d100b50f564f/tumblr_nypawv1gHl1rerytio1_500.gif");
+        }
+        if (correct > 7 && correct < 10) {
+            $("#game-result").text("Not quite good enough!");
+            $("#img-result").attr("src", "http://i.imgur.com/VAhyEDw.gif");
+
+        }
+        if (correct > 5 && correct < 7) {
+            $("#game-result").text("What a disappointment");
+            $("#img-result").attr("src", "https://chainlinkmarketing.com/wp-content/uploads/2017/04/Content-Marketing-Mistakes-Chainlink.gif");
+
+        }
+        if (correct <= 5) {
+            $("#game-result").text("Wow! You're really not the sharpest knife in the kitchen!");
+            $("#img-result").attr("src", "https://media.giphy.com/media/3oz8xTWROpGjQ68SZ2/source.gif");
+
+        }
+        $(".answer-container").hide();
+        $("#timer-holder").hide();
+        $("#stats").hide();
+        $("#playagainquestion").text("Want to play again?");
+        $("#playagainyes-btn").append("<button type='button' id='playagain-yes' class='btn btn-success'>Yes</button>");
+        $("#playagainno-btn").append("<button type='button' id='playagain-no' class='btn btn-danger'>No</button>");
+
     }
-
 }
-
 var questions = [{
     "question": "Which spice comes from the dried stigmas of crocus flowers?",
     "answers": ["Saffron", "Turmeric", "Fennel", "Wasabi"],
