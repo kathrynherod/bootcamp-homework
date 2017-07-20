@@ -2,17 +2,20 @@
     font-family: "Roboto", sans-serif;
 }
 
+.container {
+    margin: 0px!important;
+    min-width: 100vw;
+}
+
+#main-holder {}
+
+/*Buttons Area - Left Side*/
 
 #l-sidebar {
     background-color: #556468;
     color: #FBF9FB;
     height: 100vh;
-    padding-left: 30px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
 
-#main-sect {
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -20,6 +23,20 @@
 #form-row {
     margin-top: 3vh;
     margin-bottom: 3vh;
+    height: 20vh;
+}
+
+#buttons-area {
+    height: 65vh;
+    overflow-y: scroll;
+    padding-bottom: 5px;
+}
+
+#logo-holder {
+    height: 15vh;
+    padding-top: 5px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 form {
@@ -71,14 +88,36 @@ label {
     margin-bottom: 1vh!important;
 }
 
+/*Gif Area - Right Side*/
+
+#main-sect {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
+.myNewGifs {
+    width: 100%;
+    height: 19vh;
+}
+
 #gif-results {
-	width: 35vw;
-	text-align: center;
-	color:#465256;
-	border: 1px solid #595859;
-	border-radius: 5px;
-	padding: 2vh;
-	margin-bottom:3vh;
+    width: 35vw;
+    text-align: center;
+    color: #465256;
+    border: 1px solid #595859;
+    border-radius: 5px;
+    padding: 2vh;
+    margin-bottom: 3vh;
+}
+
+.panel-body {
+    padding: 0px!important;
+}
+
+.panel-footer {
+    text-align: center;
 }
 
 @media only screen and (max-width: 980px) {
@@ -87,8 +126,6 @@ label {
         padding-left: 3vh;
     }
 }
-
-
 
 
 /* color pal

@@ -10,38 +10,42 @@
 </head>
 
 <body>
-    <div class="row">
-        <!--left sidebar-->
-        <div class="col-md-3 col-sm-12 col-xs-12" id="l-sidebar">
-            <!--top sidebar section with form-->
-            <div class="row" id="form-row">
-                <div class="col-md-12 col-sm-4 col-xs-4">
-                    <form id=#custom-form>
-                        <div class="form-group">
-                            <label for="giphy-input" id="format-label-text" class="center-block">Search for a gif</label>
-                            <input type="text" class="form-control" id="giphy-input" placeholder="cats on bicycles">
-                        </div>
-                        <button type="submit" class="btn center-block" id="custom-add-btn">Search the Giphy Universe</button>
-                    </form>
+    <div class="container">
+        <div class="row" id="#main-holder">
+            <!--left sidebar-->
+            <div class="col-md-3 col-sm-12 col-xs-12" id="l-sidebar">
+                <!--top sidebar section with form-->
+                <div class="row" id="form-row">
+                    <div class="col-md-12 col-sm-4 col-xs-4">
+                        <form id=#custom-form>
+                            <div class="form-group">
+                                <label for="giphy-input" id="format-label-text" class="center-block">Search for a gif</label>
+                                <input type="text" class="form-control" id="giphy-input" placeholder="cats on bicycles">
+                            </div>
+                            <button type="submit" class="btn center-block" id="custom-add-btn">Search the Giphy Universe</button>
+                        </form>
+                    </div>
+                </div>
+                <!--mid/bottom sidebar section with buttons-->
+                <div class="row" id="buttons-area">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 id="past-search-head">Past Searches</h4>
+                    </div>
+                    <div class="row" id="generate-buttons">
+                    </div>
+                </div>
+                <div cass="row" id="logo-holder">
+                    <div class="col-md-12">
+                        <img class="img-responsive center-block" src="giphy_logo.gif">
+                    </div>
                 </div>
             </div>
-            <!--mid/bottom sidebar section with buttons-->
-            <div class="row" id="buttons area">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h4 id="past-search-head">Past Searches</h4>
+            <!--end of left sidebar-->
+            <div class="col-md-9 col-sm-9 col-xs-9" id="main-sect">
+                <div class="row">
+                    <h3 id="gif-results" class="center-block"></h3></div>
+                <div class="row" id="generate-gifs">
                 </div>
-                <div class="row" id="generate-buttons">
-                </div>
-            </div>
-        </div>
-        <!--end of left sidebar-->
-        <div class="col-md-9 col-sm-9 col-xs-9" id="main-sect">
-            <div class="row">
-                <div class="col-md-12"><img class="img-responsive center-block" src="giphy_logo.gif"></div>
-            </div>
-            <div class="row"><h3 id="gif-results" class="center-block"></h3></div>
-            <div class="row" id="generate-gifs">
-
             </div>
         </div>
     </div>
