@@ -2,11 +2,19 @@
     font-family: "Roboto", sans-serif;
 }
 
+
 #l-sidebar {
     background-color: #556468;
     color: #FBF9FB;
     height: 100vh;
     padding-left: 30px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#main-sect {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 #form-row {
@@ -24,8 +32,6 @@ label {
     font-size: 2.75vh;
     text-align: center;
 }
- 
-	
 
 #custom-add-btn {
     background-color: #8BB1B3;
@@ -45,7 +51,7 @@ label {
 #past-search-head {
     text-align: center;
     border: 1px double #CECCCE;
-	border-radius: 5px;
+    border-radius: 5px;
     padding-bottom: 1vh;
     padding-top: 1vh;
 }
@@ -65,12 +71,23 @@ label {
     margin-bottom: 1vh!important;
 }
 
+#gif-results {
+	width: 35vw;
+	text-align: center;
+	color:#465256;
+	border: 1px solid #595859;
+	border-radius: 5px;
+	padding: 2vh;
+	margin-bottom:3vh;
+}
+
 @media only screen and (max-width: 980px) {
     #l-sidebar {
         height: 16vh;
         padding-left: 3vh;
     }
 }
+
 
 
 
