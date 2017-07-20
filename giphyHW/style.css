@@ -1,0 +1,85 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+#l-sidebar {
+    background-color: #556468;
+    color: #FBF9FB;
+    height: 100vh;
+    padding-left: 30px;
+}
+
+#form-row {
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+form {
+    border: 2px ridge #CECCCE;
+    padding: 1vw;
+    border-radius: 5px;
+}
+
+label {
+    font-size: 2.75vh;
+    text-align: center;
+}
+ 
+	
+
+#custom-add-btn {
+    background-color: #8BB1B3;
+    color: #EDEBED;
+    width: 100%;
+}
+
+#custom-add-btn:hover {
+    background-color: #EDEBED;
+    color: #8BB1B3;
+}
+
+.float-right {
+    float: right;
+}
+
+#past-search-head {
+    text-align: center;
+    border: 1px double #CECCCE;
+	border-radius: 5px;
+    padding-bottom: 1vh;
+    padding-top: 1vh;
+}
+
+#generate-buttons {
+    margin: 0px;
+}
+
+.userInput-btn {
+    text-align: center;
+}
+
+.myNewbuttons {
+    font-size: 1.7vh!important;
+    background-color: #595859;
+    border: 1px solid #CECCCE!important;
+    margin-bottom: 1vh!important;
+}
+
+@media only screen and (max-width: 980px) {
+    #l-sidebar {
+        height: 16vh;
+        padding-left: 3vh;
+    }
+}
+
+
+
+/* color pal
+
+#8BB1B3 pewter blue
+#FBF9FB snow white
+#BFC2C4 silver
+#EDEBED light silver
+#556468 dark/bluegray
+
+*/
