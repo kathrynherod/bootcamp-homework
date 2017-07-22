@@ -9,6 +9,9 @@
 
 #main-holder {}
 
+
+
+
 /*Buttons Area - Left Side*/
 
 #l-sidebar {
@@ -88,6 +91,9 @@ label {
     margin-bottom: 1vh!important;
 }
 
+
+
+
 /*Gif Area - Right Side*/
 
 #main-sect {
@@ -121,11 +127,33 @@ label {
 }
 
 @media only screen and (max-width: 980px) {
-    #l-sidebar {
-        height: 16vh;
-        padding-left: 3vh;
+    #l-sidebar {}
+    #form-row {
+
+        margin-top: 2vh;
+        margin-bottom: 0vh;
+        height: 15vh;
+    }
+    .myNewGifs {
+        width: 100%;
+        height: 13vh;
+    }
+    .custom-add-button {
+    	margin-bottom: 0.5vh;
+
+    }
+    #buttons-area {
+        height: 60vh;
+        overflow-y: scroll;
+        padding-bottom: 5px;
+    }
+    .myNewbuttons {
+    	font-size: 1.5vh!important;
     }
 }
+
+
+
 
 
 /* color pal

@@ -1,8 +1,3 @@
-$(document).ready(function() {
-    myGiffy.init();
-
-})
-
 var myGiffy = {
 
     myArray: ["mean girls", "cake fail", "puppies", "gordon ramsay", "goats", "i love javascript"],
@@ -27,7 +22,6 @@ var myGiffy = {
             myGiffy.doApiStuff(gifSelected);
         })
         $(document).on("click", ".myNewGifs", function() {
-
             var state = $(this).attr("data-state");
             var gifClicked = this;
             myGiffy.manipulateGifs(state, gifClicked);
@@ -47,8 +41,8 @@ var myGiffy = {
         $("#generate-buttons").empty();
 
         for (var i = 0; i < this.myArray.length; i++) {
-
-            var col6 = $("<div class='col-md-6' id='colID'" + i + ">");
+            var colID = "colID"+i;
+            var col6 = $("<div class='col-md-6' id="+ colID + ">");
             var a = $("<button class='btn '>");
             a.addClass("myNewbuttons").attr("data-name", this.myArray[i]).text(this.myArray[i]);
 
@@ -58,11 +52,12 @@ var myGiffy = {
     },
 
     renderGifs: function(data) {
+
         $("#generate-gifs").empty();
 
         for (var i = 0; i < 12; i++) {
 
-            var col3 = $("<div class='col-md-3'><div class='panel panel-default' id='panelID" + i + "'><div class='panel-body'>");
+            var col3 = $("<div class='col-md-3 col-md-4 col-xs-6'><div class='panel panel-default' id='panelID" + i + "'><div class='panel-body'>");
             var a = $("<img class='image-responsive center-block '>");
             a.addClass("myNewGifs");
             a.attr("data-still", data[i].images.downsized_still.url);
@@ -94,7 +89,6 @@ var myGiffy = {
     },
 
     manipulateGifs: function(state, gifClicked) {
-         console.log(state)
 
         if (state === "still") {
             $(gifClicked).attr("src", $(gifClicked).attr("data-animate"));
@@ -105,3 +99,6 @@ var myGiffy = {
         }
     }
 }
+$(document).ready(function() {
+    myGiffy.init();
+})

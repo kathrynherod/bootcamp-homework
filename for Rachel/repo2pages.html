@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generate Pages Link</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <form id=#custom-form>
+                    <div class="form-group">
+                        <label for="repo-input" id="format-label-text" class="center-block">
+                            <h3>Paste your .html repo link</h3></label>
+                        <input type="text" class="form-control" id="repo-input" placeholder="https://github.com/kathrynherod/classwork_2-1/blob/master/index.html">
+                    </div>
+                    <button type="submit" class="btn center-block" id="get-link-btn">Get my Link</button>
+                </form>
+            </div>
+        </div>
+        <div class="row" id="space">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="">Here's your pages link!</div>
+                    <div class="panel-body" id="generated-link">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="r2p.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
