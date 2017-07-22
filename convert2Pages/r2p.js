@@ -1,7 +1,6 @@
 var userLink = {
     init: function() {
         this.clickHandler();
-
     },
 
     clickHandler: function() {
@@ -9,9 +8,6 @@ var userLink = {
             e.preventDefault();
             userLink.processInput();
         })
-
-
-
     },
     processInput: function() {
         var userInput = $("#repo-input").val().trim();
@@ -24,9 +20,7 @@ var userLink = {
         newString[0] = stringSplit1[0];
         newString[1] = "//";
         newString[2] = stringSplit1[3];
-
         newString[3] = ".github.io";
-
 
         if (stringSplit1.length > 6) {
             for (var i = 4; i < stringSplit1.length; i++) {
@@ -37,17 +31,14 @@ var userLink = {
                     i++;
                 }
                 newString[i] = "/" + stringSplit1[i];
-
             }
             console.log("long");
         }
         var newUrl = newString.join('');
-
         $("#generated-link").text(newUrl)
-
     },
-
 }
+
 $(document).ready(function() {
     userLink.init();
 })
