@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Train Scheduler</title>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="page-header">
+                <h1 style="text-align:center;">Any time is Train Time</h1>
+                <h1 style="text-align:center;"><small>Choo Choo</small></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Current Train Schedule</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-hover" style="margin-bottom: 0px">
+                        <thead class="thead-default">
+                            <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Frequency (min)</th>
+                                <th>Next Arrival</th>
+                                <th>Minutes Away</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                                <td>Larry</td>
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                                <td>Larry</td>
+                            </tr>
+                            <tr>
+                                <td>Mark</td>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                                <td>Larry</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Add train</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label for="train-name">Train Name:</label>
+                        <input type="text" class="form-control" id="train-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destination:</label>
+                        <input type="text" class="form-control" id="destination">
+                    </div>
+                    <div class="form-inline">
+                    
+                        <label for="train-time" style="width: 100%;"">Frist Train Time (HH:mm - military time)</label>
+                        <select class="form-control" id="train-time-hr" style="width: 6%;">
+                        </select><strong id="separator"> :</strong>
+                        <select class="form-control" id="train-time-min1" style="width: 3%;">
+                        </select>
+                        <select class="form-control" id="train-time-min2" style="width: 3%;">
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="train.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
+</body>
+
+</html>
