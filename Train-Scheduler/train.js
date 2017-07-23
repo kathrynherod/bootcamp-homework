@@ -11,9 +11,9 @@ function renderDom() {
     for (var j = 0; j < 10; j++) {
         $("#train-time-min1").append("<option id='min1-" + [j] + "'>" + [j]);
     }
-  /*   for (var k = 0; k < 10; j++) {
+     for (var k = 0; k < 10; j++) {
         $("#train-time-min2").append("<option id='min2-" + [k] + "'>" + [k]);
-    }*/
+    }
 
 }
 renderDom();
