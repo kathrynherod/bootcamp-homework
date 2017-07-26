@@ -4,17 +4,19 @@
 <head>
     <title>Train Scheduler</title>
     <meta charset="UTF-8">
-    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Firebase Reference -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
 </head>
 
 <body>
     <div class="container">
         <div class="row">
             <div class="page-header">
-                <h1 style="text-align:center;">Any time is Train Time</h1>
-                <h1 style="text-align:center;"><small>Choo Choo</small></h1>
+                <h1>Train Time</h1>
             </div>
         </div>
         <div class="row">
@@ -34,27 +36,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Larry</td>
+                            <tr id="example-1">
+                                <td>Chewy-Choo</td>
+                                <td>Atlanta</td>
+                                <td>45</td>
+                                <td>x</td>
+                                <td>y</td>
                             </tr>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                                <td>Larry</td>
-                            </tr>
-                            <tr>
-                                <td>Mark</td>
-                                <td>Larry</td>
-                                <td>the Bird</td>
-                                <td>@twitter</td>
-                                <td>Larry</td>
-                            </tr>
+                        
                         </tbody>
                     </table>
                 </div>
@@ -63,36 +52,46 @@
         <div class="row">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Add train</h3>
+                    <h3 class="panel-title" style="display: inline-block;">Add train</h3>
+                    <a data-toggle="collapse" href="#collapse1"><i style="float: right;"class="fa fa-chevron-down" aria-hidden="false"></i></a>
                 </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label for="train-name">Train Name:</label>
-                        <input type="text" class="form-control" id="train-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="destination">Destination:</label>
-                        <input type="text" class="form-control" id="destination">
-                    </div>
-                    <div class="form-inline">
-
-                        <label for="train-time" style="width: 100%;"">Frist Train Time (HH:mm - military time)</label>
-                        <select class="form-control" id="train-time-hr" style="width: 10%;">
-                        </select><strong id="separator"> :</strong>
-                        <select class="form-control" id="train-time-min1" style="width: 5%;">
-                        </select>
-                        <select class="form-control" id="train-time-min2" style="width: 5%;">
-                        </select>
-
+                <div id="collapse1" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="train-name">Train Name:</label>
+                                    <input type="text" class="form-control" id="train-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="destination">Destination:</label>
+                                    <input type="text" class="form-control" id="destination">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="train-time">First Train Time (HH:MM - Military Time):</label>
+                                    <br>
+                                    <select class="form-control" id="train-time-hr" style="width: 25%; display: inline-block;"></select>
+                                    <select class="form-control" id="train-time-min1" style="width: 12.5%; display: inline-block;"></select>
+                                    <select class="form-control" id="train-time-min2" style="width: 12.5%; display: inline-block;"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="frequency">Frequency (min):</label>
+                                    <input type="number" class="form-control" id="frequency">
+                                </div>
+                            </div>
+                            <button class="btn btn-primary center-block" id="submit">Submit</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="train.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript " src="train.js "></script>
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa " crossorigin="anonymous "></script>
 </body>
 
 </html>
