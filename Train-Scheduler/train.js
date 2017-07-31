@@ -21,11 +21,9 @@ var trainScheduler = {
         var currentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
         //$("#current-time").text("Current time: " + currentTime)
         for (var i = 0; i < 24; i++) {
-            if (i < 10) {
-                $(timeHrSel).append("<option id='hr-0" + [i] + "'>" + "0" + [i]);
-            } else {
+           
                 $(timeHrSel).append("<option id='hr-" + [i] + "'>" + [i]);
-            }
+            
         }
         for (var j = 0; j < 6; j++) {
             $("#train-time-min1").append("<option id='min1-" + [j] + "'>" + [j]);
@@ -37,6 +35,7 @@ var trainScheduler = {
         database.ref().on("child_added", function(data) {
 
             trainHr = data.val().timeHr;
+            console.log(data)
             trainMin = data.val().timeMin;
             trainTime = trainHr + ":" + trainMin;
             trainFrequency = data.val().frequency;
@@ -54,7 +53,7 @@ var trainScheduler = {
 
             // Time apart (remainder)
             var tRemainder = diffTime % trainFrequency;
-            console.log(tRemainder);
+            console.log(tRemainder);    
 
             // Minute Until Train
             var tMinutesTillTrain = trainFrequency - tRemainder;
@@ -62,7 +61,7 @@ var trainScheduler = {
 
             // Next Train
             var nextTrain = moment().add(tMinutesTillTrain, "minutes");
-            nextTrain = moment(nextTrain).format("hh:mm");
+            nextTrain = moment(nextTrain).format("hh:mm a");
             console.log("ARRIVAL TIME: " + nextTrain);
 
             $("#example-1").append("<tr><td>" + data.val().name + "</td><td>" + data.val().destination + "</td><td>" + data.val().frequency + "</td><td>" + nextTrain + "</td><td>" + tMinutesTillTrain + "</td>");

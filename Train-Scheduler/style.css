@@ -1,3 +1,18 @@
+.container {
+	height: 100vh;
+	overflow-y: hidden;
+}
+#title-row{
+height: 12vh;
+}
+#trainsched-row{
+	height: 47vh;
+	
+}
+#addtrain-row{
+	margin-top: 2vh;
+	height: 36vh;
+}
 .page-header {
 	margin-top: 10px!important;
 	text-align: center;
@@ -13,4 +28,11 @@ h1 {
 	
 	margin: 0px;
 	text-align: right;
+}
+#train-sched {
+	height: 40vh;
+	overflow-y: scroll;
+}
+.add-train-panel {
+	height: 29vh;
 }
