@@ -1,24 +1,18 @@
 .container {
-	height: 100vh;
-	overflow-y: hidden;
+
 }
-#title-row{
-height: 12vh;
-}
-#trainsched-row{
-	height: 47vh;
-	
-}
-#addtrain-row{
-	margin-top: 2vh;
-	height: 36vh;
-}
+
 .page-header {
 	margin-top: 10px!important;
 	text-align: center;
 }
 h1 {
 	margin-top: 0px!important;
+	background-color: rgba(255,255,255,0.5) ;
+}
+.panel {
+	background-color: rgba(255,255,255,0.5)!important ;
+	color: ;
 }
 #current-sched {
 	
@@ -29,10 +23,38 @@ h1 {
 	margin: 0px;
 	text-align: right;
 }
-#train-sched {
-	height: 40vh;
-	overflow-y: scroll;
+
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
 }
-.add-train-panel {
-	height: 29vh;
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    -webkit-transform: translate(-50%, -50%);
+       -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+	    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+    .fullscreen-bg {
+        background: url('video_still2.jpg') center center / cover no-repeat;
+    }
+
+    .fullscreen-bg__video {
+        display: none;
+    }
 }
