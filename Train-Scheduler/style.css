@@ -5,3 +5,12 @@
 h1 {
 	margin-top: 0px!important;
 }
+#current-sched {
+	
+	margin: 0;
+}
+#current-time {
+	
+	margin: 0px;
+	text-align: right;
+}
