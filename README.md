@@ -20,11 +20,11 @@
 
 - [Repo Link] (https://github.com/kathrynherod/bootcamp-homework/tree/master/giphyHW)
 
-- [in progress] Week 7 Homework \- Train Scheduler
+- [x] Week 7 Homework \- Train Scheduler
 
 - [Repo Link] (https://github.com/kathrynherod/bootcamp-homework/blob/master/Train-Scheduler/index.html)
 
-- [ ] Week 8 Homework \- Project 1
+- [in progress] Week 8 Homework \- Project 1
 
 - [ ] Week 9 Homework \- LIRI Bot
 
