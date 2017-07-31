@@ -24,7 +24,9 @@
 
 - [Repo Link] (https://github.com/kathrynherod/bootcamp-homework/blob/master/Train-Scheduler/index.html)
 
-- [in progress] Week 8 Homework \- Project 1
+- [ ] Week 8 Homework \- Project 1
+
+- in progress
 
 - [ ] Week 9 Homework \- LIRI Bot
 
