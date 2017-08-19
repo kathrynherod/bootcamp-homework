@@ -19,10 +19,10 @@ var liri = {
             }
         }
         var emoji = require('node-emoji');
-        this.getTask(emoji, action, title, twitter, tUser, spotify, title, request);
+        this.getTask(emoji, action, title, twitter, tUser, spotify, title, request, fs);
     },
-    getTask: function(emoji, action, title, twitter, tUser, spotify, title, request) {
-        var cinema = emoji.get("cinema") + " ";
+    getTask: function(emoji, action, title, twitter, tUser, spotify, title, request, fs) {
+
         if (action === "my-tweets" || "spotify-this-song" || "movie-this" || "do-what-it-says") {
             switch (action) {
                 case "my-tweets":
@@ -38,11 +38,15 @@ var liri = {
                     if (title === undefined || null) {
                         title = "Mr. Nobody";
                     }
-                    liri.myMovie(emoji, title, request, cinema)
+                    liri.myMovie(emoji, title, request)
+                    break
+                case "do-what-it-says":
+                    liri.doWhat(emoji, action, title, twitter, tUser, spotify, title, request, fs);
             }
         }
         //START check if user types too many spaces
         else {
+            var cinema = emoji.get("cinema") + " ";
             var error = emoji.get('exclamation') + " " + emoji.get('fire') + " " + emoji.get('x') + " " + emoji.get('rage') + " ";
             error += error;
             var bird = emoji.get("baby_chick");
@@ -90,7 +94,8 @@ var liri = {
             console.log('\n' + music + music + music + music + music + music + music + music + music + music + music + music + music + music + '\n')
         });
     },
-    myMovie: function(emoji, title, request, cinema) {
+    myMovie: function(emoji, title, request) {
+        var cinema = emoji.get("cinema") + " ";
         title = title.split(' ').join('+');
         var queryUrl = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=40e9cece";
         request(queryUrl, function(err, data, body) {
@@ -106,9 +111,22 @@ var liri = {
                 console.log("Production Country:     " + body.Country)
                 console.log("Language:               " + body.Language)
                 console.log("Actors:                 " + body.Actors)
-                console.log("Plot:                   " + body.Plot)                
+                console.log("Plot:                   " + body.Plot)
             }
-            console.log('\n'+ cinema + cinema+ cinema+ cinema+ cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + '\n')
+            console.log('\n' + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + '\n')
+        })
+    },
+    doWhat: function(emoji, action, title, twitter, tUser, spotify, title, request, fs) {
+        fs.readFile("random.txt", "utf8", function(err, data) {
+            if (err) {
+                console.log(err);
+            } else {
+                //console.log(data);
+                var dataArr = data.split(",");
+                action = dataArr[0];
+                title = dataArr[1];
+                liri.getTask(emoji, action, title, twitter, tUser, spotify, title, request, fs);
+            }
         })
     }
 }
