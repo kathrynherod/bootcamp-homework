@@ -19,26 +19,33 @@ var liri = {
             }
         }
         var emoji = require('node-emoji');
+        fs.appendFile("log.txt",
+            "\n -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-\n\n" +
+            action + " ==>> " + title + "\n\n",
+            function(err) {
+                if (err) {
+                    return console.log(err);
+                }
+            });
         this.getTask(emoji, action, title, twitter, tUser, spotify, title, request, fs);
     },
     getTask: function(emoji, action, title, twitter, tUser, spotify, title, request, fs) {
-
         if (action === "my-tweets" || "spotify-this-song" || "movie-this" || "do-what-it-says") {
             switch (action) {
                 case "my-tweets":
-                    liri.myTweets(twitter, tUser);
+                    liri.myTweets(twitter, tUser, fs);
                     break;
                 case "spotify-this-song":
                     if (title === undefined || null) {
                         title = "The-Sign";
                     }
-                    liri.mySong(emoji, spotify, title);
+                    liri.mySong(emoji, spotify, title, fs);
                     break
                 case "movie-this":
                     if (title === undefined || null) {
                         title = "Mr. Nobody";
                     }
-                    liri.myMovie(emoji, title, request)
+                    liri.myMovie(emoji, title, request, fs)
                     break
                 case "do-what-it-says":
                     liri.doWhat(emoji, action, title, twitter, tUser, spotify, title, request, fs);
@@ -59,7 +66,7 @@ var liri = {
         }
         //END check if user types too many spaces
     },
-    myTweets: function(twitter, tUser) {
+    myTweets: function(twitter, tUser, fs) {
         console.log("twitter running")
         twitter.get('statuses/user_timeline', tUser, function(error, tweets, response) {
             if (error) {
@@ -69,11 +76,16 @@ var liri = {
                 for (i = 19; i >= 0; i--) {
                     console.log(i + 1)
                     console.log(tweets[i].text);
+                    fs.appendFile("log.txt", tweets[i].text + "\n", function(err) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                    });
                 }
             }
         });
     },
-    mySong: function(emoji, spotify, title) {
+    mySong: function(emoji, spotify, title, fs) {
         spotify.search({
             type: 'track',
             query: title
@@ -92,9 +104,21 @@ var liri = {
             console.log("Album: " + res.album.name + '\n')
             console.log("Preview URL: " + res.preview_url + '\n')
             console.log('\n' + music + music + music + music + music + music + music + music + music + music + music + music + music + music + '\n')
+
+            fs.appendFile("log.txt",
+                "Song Title: " + res.name + "\n" +
+                "Artist: " + res.artists[0].name + '\n' +
+                "Album: " + res.album.name + '\n' +
+                "Preview URL: " + res.preview_url + '\n',
+                function(err) {
+                    if (err) {
+                        return console.log(err);
+                    }
+                });
+
         });
     },
-    myMovie: function(emoji, title, request) {
+    myMovie: function(emoji, title, request, fs) {
         var cinema = emoji.get("cinema") + " ";
         title = title.split(' ').join('+');
         var queryUrl = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=40e9cece";
@@ -103,6 +127,13 @@ var liri = {
             console.log('\n' + cinema + cinema + cinema + cinema + cinema + " R-E-S-U-L-T-S " + cinema + cinema + cinema + cinema + cinema + '\n')
             if (body.Title === undefined) {
                 console.log("sorry - we aren't cool enough to know that movie")
+                fs.appendFile("log.txt", "sorry - we aren't cool enough to know that movie"+'\n',
+                    function(err) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                    });
+
             } else {
                 console.log("Title:                  " + body.Title + '\n');
                 console.log("Release Year:           " + body.Year);
@@ -112,8 +143,26 @@ var liri = {
                 console.log("Language:               " + body.Language)
                 console.log("Actors:                 " + body.Actors)
                 console.log("Plot:                   " + body.Plot)
+
+                fs.appendFile("log.txt",
+                    "Title:                  " + body.Title + '\n' +
+                    "Release Year:           " + body.Year + '\n' +
+                    "IMDB Rating:            " + body.imdbRating + '\n' +
+                    "Rotten Tomatoes Rating: " + body.Ratings[1].Value + '\n' +
+                    "Production Country:     " + body.Country + '\n' +
+                    "Language:               " + body.Language + '\n' +
+                    "Actors:                 " + body.Actors + '\n' +
+                    "Plot:                   " + body.Plot + '\n',
+                    function(err) {
+                        if (err) {
+                            return console.log(err);
+                        }
+                    });
             }
             console.log('\n' + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + cinema + '\n')
+
+
+
         })
     },
     doWhat: function(emoji, action, title, twitter, tUser, spotify, title, request, fs) {
