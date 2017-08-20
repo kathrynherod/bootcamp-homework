@@ -1,0 +1,32 @@
+.container {
+	background-color: black;
+}
+.row {
+	width: 100%;
+	margin: 0px;
+	border: 1px solid black;
+}
+.row1 {
+	background-color: red;
+	height: 25%;
+}
+.row2 {
+	background-color: yellow;
+	height: 25%;
+}
+.row3 {
+	background-color: green;
+	height: 25%;
+}
+.row4 {
+	background-color: blue;
+	height: 25%;
+}
+
+
+
+.col-md-4 {
+	width: 33%;
+	display: inline-block;
+	border: 1px solid black
+}

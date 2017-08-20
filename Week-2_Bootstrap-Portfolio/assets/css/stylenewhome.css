@@ -1,0 +1,57 @@
+body {
+     font-family: 'Catamaran', sans-serif!important;
+     font-size: 48px;
+     background-color: #D9E5D6!important; 
+     min-height: 700px;
+       
+}
+div {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.container {
+	
+}
+
+.custom-nav {
+	background-color: #BA9330!important;
+	height: 700px;
+	display: inline-block;
+	
+	position: fixed;
+	z-index:2;
+}
+
+.mid-col {
+	border-left: 2px solid #355B88;
+	height: 700px;
+}
+#makeK {
+	margin-top: -5%;
+	margin-left: 5%;
+	min-width: 850px;
+	min-height: 850px;
+    background-color:#BA9330!important;
+    transform:rotate(45deg);
+    display: inline-block;
+    float: left;
+    z-index:1;
+    position: fixed;
+    border-left: 2px solid #355B88 ;
+    border-bottom: 2px solid #355B88 ;
+}
+
+#makeK2 {
+	margin-top: -3%;
+	margin-left: -10%;
+	min-width: 800px;
+	min-height: 800px;
+    background-color:#5b8835!important;
+    transform:rotate(45deg);
+    display: inline-block;
+    float: left;
+    z-index:2;
+    position: fixed;
+    border: 1px solid #D9E5D6 ;
+}
