@@ -112,3 +112,12 @@ Song Title: Superstition
 Artist: Stevie Wonder
 Album: Number 1's
 Preview URL: null
+
+ -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-
+
+spotify-this-song ==>> superstition
+
+Song Title: Superstition
+Artist: Stevie Wonder
+Album: Number 1's
+Preview URL: null
