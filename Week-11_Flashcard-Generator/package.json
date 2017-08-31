@@ -1,0 +1,24 @@
+{
+  "name": "flashcards",
+  "version": "1.0.0",
+  "description": "flashcards",
+  "main": "BasicCard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathrynherod/Week-11_Flashcard-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathrynherod/Week-11_Flashcard-Generator/issues"
+  },
+  "homepage": "https://github.com/kathrynherod/Week-11_Flashcard-Generator#readme",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "inquirer": "^3.2.2"
+  },
+  "devDependencies": {}
+}
