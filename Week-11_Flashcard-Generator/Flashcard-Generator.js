@@ -51,6 +51,7 @@ var makeCards = {
             }
         });
     },
+    
     inquirerBasic: function(inquirer, bc, kind, totalCards, runThis, myCards, chalk) {
         var question = runThis + 1;
         var myChalk = chalk.greenBright.bold;
