@@ -1,5 +1,4 @@
 var makeCards = {
-
     init: function() {
         var bc = require("./BasicCard.js");
         var cc = require("./ClozeCard.js");
@@ -8,11 +7,9 @@ var makeCards = {
         var totalCards = 0;
         var kind = "";
         var myCards = [];
-
         this.inquirerWhichCard(inquirer, bc, myCards, cc, chalk);
     },
     inquirerWhichCard: function(inquirer, bc, myCards, cc, chalk) {
-
         inquirer.prompt([{
             type: "input",
             message: "\n\nWhich type of card do you want to make? Your options are: " + chalk.greenBright("basic") + " or " + chalk.greenBright("cloze") + "\n\n",
@@ -34,32 +31,26 @@ var makeCards = {
         });
     },
     inquirerHowMany: function(inquirer, bc, kind, myCards, cc, chalk) {
-
         inquirer.prompt([{
             type: "input",
             message: "\n\nHow many flash cards are you making?\n\n",
             name: "count"
         }]).then(function(data) {
-
             if (isNaN(data.count) === false) {
                 console.log(kind)
                 totalCards = data.count;
                 var runThis = 0
                 if (kind === "basic") {
-
                     makeCards.inquirerBasic(inquirer, bc, kind, totalCards, runThis, myCards, chalk);
                 } else {
-
                     makeCards.inquirerCloze(inquirer, kind, totalCards, runThis, myCards, cc, chalk);
                 }
-
             } else {
                 console.log(chalk.bold.red("\n\n==================>>>  Please enter a NUMBER <<<==================\n\n"));
                 makeCards.inquirerHowMany(inquirer, bc, kind, myCards, cc, chalk);
             }
         });
     },
-
     inquirerBasic: function(inquirer, bc, kind, totalCards, runThis, myCards, chalk) {
         var question = runThis + 1;
         var myChalk = chalk.greenBright.bold;
@@ -72,8 +63,8 @@ var makeCards = {
         }, {
             name: "back",
             message: myChalk("\nEnter the answer to question #" + question + ".")
-        }]).then(function(card) {
-
+        }])
+        .then(function(card) {
             var newCard = new bc(question, card.front, card.back);
             myCards.push(newCard)
             runThis++;
@@ -108,7 +99,6 @@ var makeCards = {
             }
         });
     }
-
 }
 
 makeCards.init();
