@@ -12,7 +12,7 @@ var table = new Table({
 });
 
 //db credentials
-var con = mysql.createConnection({
+var con: mysql.createConnection({
     host: "127.0.0.1",
     user: "root",
     password: "rootpassword",
