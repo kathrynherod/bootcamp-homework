@@ -13,3 +13,6 @@
 | 8 & 9 | [✔️] | Project 1 | HTML, CSS, Bootstrap, Javascript, JQuery, Firebase Auth, Firebase DB, Firebase Storage, Facebook API | [Repo](https://github.com/kathrynherod/HCB-Project-1) | [Pages](https://kathrynherod.github.io/HCB-Project-1/index.html) | [Justin Lubos](https://github.com/JLubos) |
 | 10 | [✔️] | LIRI Bot | Javascript, node.js, [Twitter API](https://www.npmjs.com/package/twitter), [Spotifiy API](https://www.npmjs.com/package/spotify-web-api-node), [OMDB API](https://www.npmjs.com/package/omdb), [node-emoji](https://www.npmjs.com/package/node-emoji) , JSON | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App) | n/a |  |
 | 11 | [✔️] | Flashcards | Javascript, node.js, JSON, [Chalk](https://www.npmjs.com/package/chalk) | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-11_Flashcard-Generator) | n/a |  |
+
+| 12 | [-] | Bamazon | Javascript, node.js, MYSQL, [Chalk](https://www.npmjs.com/package/chalk) | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-12_Bamazon) | n/a |  |
+
