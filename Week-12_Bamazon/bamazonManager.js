@@ -1,45 +1,17 @@
 var bamazon = {
     init: function() {
         //require all the stuff
-        var mysql = require('mysql');
-        var con = mysql.createConnection({
-            host: "127.0.0.1",
-            user: "root",
-            password: "rootpassword",
-            database: "bamazon_db"
-        });
-        //pretty table :)
-        var Table = require('cli-table');
-        var table = new Table({
-            chars: {
-                'top': '═',
-                'top-mid': '╤',
-                'top-left': '╔',
-                'top-right': '╗',
-                'bottom': '═',
-                'bottom-mid': '╧',
-                'bottom-left': '╚',
-                'bottom-right': '╝',
-                'left': '║',
-                'left-mid': '╟',
-                'mid': '─',
-                'mid-mid': '┼',
-                'right': '║',
-                'right-mid': '╢',
-                'middle': '│'
-            },
-            head: ['Item Id', 'Product Name', 'Department', 'Price', 'In Stock'],
-            colWidths: [10, 30, 20, 10, 10]
-        });
         var inq = require('inquirer');
+        var tables = require("./tables.js");
+
         //end of requiring stuff
         this.startDb(con); //start db connection
-        this.displayProducts(con, table); //show products
-        this.initInq(inq, con, table); //ask what they want
+        //this.displayProducts(con, table); //show products
+        //this.initInq(inq, con, table); //ask what they want
     },
     //start db connection
-    startDb: function(con) {
-        con.connect(function(err) {
+    startDb: function() {
+        sql.con.connect(function(err) {
             if (err) { throw err; }
             console.log("Connected to Database!");
         });
@@ -58,7 +30,7 @@ var bamazon = {
     //ask what they want
     initInq: function(inq, con, table) {
         inq.prompt([{
-            type: "input",
+            type: "choices",
             message: "Which product would you like to purchase?? Please enter an item_id \n\n",
             name: "item"
         }]).then(function(data) {
@@ -139,9 +111,9 @@ var bamazon = {
             function(err) {
                 if (err) throw err;
                 console.log("The database has been updated!");
-                table.push(["","","","",""]);
-                table.push(["the","database","has","been","updated"]);
-                table.push(["","","","",""]);
+                table.push(["", "", "", "", ""]);
+                table.push(["the", "database", "has", "been", "updated"]);
+                table.push(["", "", "", "", ""]);
                 bamazon.displayProducts(con, table);
             }
         )
