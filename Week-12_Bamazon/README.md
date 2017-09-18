@@ -39,9 +39,9 @@
 
 - - -
 
-![1](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/cust_ex1.gif?raw=true)
+![1](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/cust_ex1a.gif?raw=true)
 
-![2](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/cust_ex2.gif?raw=true)
+![2](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/cust_ex2a.gif?raw=true)
 
 - - -
 
