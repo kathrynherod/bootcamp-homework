@@ -73,6 +73,18 @@
 
 - - -
 
+![1](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex1.gif?raw=true)
+
+![2](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex2.gif?raw=true)
+
+![3](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex3.gif?raw=true)
+
+![4](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex4.gif?raw=true)
+
+![5](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex5.gif?raw=true)
+
+
+
 ### Challenge #3: Supervisor View (Final Level)
 
 1. Create a new MySQL table called `departments`. Your table should include the following columns:
