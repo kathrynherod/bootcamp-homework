@@ -43,32 +43,30 @@
 		<dict>
 			<key>connectionEncoding</key>
 			<string>utf8</string>
-			<key>contentFilter</key>
-			<dict/>
 			<key>contentPageNumber</key>
 			<integer>1</integer>
 			<key>contentSelection</key>
 			<data>
-			YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFy
-			Y2hpdmVyVCR0b3ASAAGGoK8QDwcIFRYXGBkfICEoLDA0OFUkbnVs
-			bNMJCgsMEBRXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6MNDg+A
-			AoADgASjERITgAWABoAKgA5UdHlwZVRyb3dzVGtleXNfECZTZWxl
-			Y3Rpb25EZXRhaWxUeXBlUHJpbWFyeUtleWVkRGV0YWlsc9MJCgsa
-			HB6hG4AHoR2ACIAJUjExCdIiIyQlWiRjbGFzc25hbWVYJGNsYXNz
-			ZXNfEBNOU011dGFibGVEaWN0aW9uYXJ5oyQmJ1xOU0RpY3Rpb25h
-			cnlYTlNPYmplY3TSCgspK6EqgAuADdILLS4vWU5TLnN0cmluZ4AM
-			V2l0ZW1faWTSIiMxMl8QD05TTXV0YWJsZVN0cmluZ6MxMydYTlNT
-			dHJpbmfSIiM1Nl5OU011dGFibGVBcnJheaM1NydXTlNBcnJhedIi
-			IyY5oiYnXxAPTlNLZXllZEFyY2hpdmVy0Tw9VGRhdGGAAQAIABEA
-			GgAjAC0AMgA3AEkATwBWAF4AaQBwAHQAdgB4AHoAfgCAAIIAhACG
-			AIsAkACVAL4AxQDHAMkAywDNAM8A0gDTANgA4wDsAQIBBgETARwB
-			IQEjASUBJwEsATYBOAFAAUUBVwFbAWQBaQF4AXwBhAGJAYwBngGh
-			AaYAAAAAAAACAQAAAAAAAAA+AAAAAAAAAAAAAAAAAAABqA==
+			YnBsaXN0MDDUAQIDBAUGNjdYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK0HCBUWFxgZHSQoLDA0VSRudWxs0wkK
+			CwwQFFdOUy5rZXlzWk5TLm9iamVjdHNWJGNsYXNzow0OD4ACgAOA
+			BKMREhOABYAGgAiADFR0eXBlVHJvd3NUa2V5c18QJlNlbGVjdGlv
+			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
+			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
+			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClZsb2dfaWTSHh8tLl8Q
+			D05TTXV0YWJsZVN0cmluZ6MtLyNYTlNTdHJpbmfSHh8xMl5OU011
+			dGFibGVBcnJheaMxMyNXTlNBcnJhedIeHyI1oiIjXxAPTlNLZXll
+			ZEFyY2hpdmVy0Tg5VGRhdGGAAQAIABEAGgAjAC0AMgA3AEUASwBS
+			AFoAZQBsAHAAcgB0AHYAegB8AH4AgACCAIcAjACRALoAwQDCAMMA
+			xQDKANUA3gD0APgBBQEOARMBFQEXARkBHgEoASoBMQE2AUgBTAFV
+			AVoBaQFtAXUBegF9AY8BkgGXAAAAAAAAAgEAAAAAAAAAOgAAAAAA
+			AAAAAAAAAAAAAZk=
 			</data>
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{0, 0}, {645, 472}}</string>
+			<string>{{0, 0}, {694, 450}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
@@ -125,9 +123,16 @@ CREATE TABLE inventory_log (
   updated_stock INTEGER(11) NOT NULL,
   PRIMARY KEY (log_id)
 );
-</string>
+
+CREATE TABLE departments (
+  department_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  department_name VARCHAR(100) NOT NULL,
+  over_head_costs INTEGER(11),
+  product_sales INTEGER(11),   
+  PRIMARY KEY (department_id)
+);</string>
 			<key>table</key>
-			<string>products</string>
+			<string>inventory_log</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
@@ -142,6 +147,17 @@ CREATE TABLE inventory_log (
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>DROP DATABASE IF EXISTS restaurant_db;
+CREATE DATABASE restaurant_db;
+USE restaurant_db;
+CREATE TABLE reservations (
+  res_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  res_name VARCHAR(100) NOT NULL,
+  phone VARCHAR(50) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  unique_id VARCHAR(50) NOT NULL,
+  PRIMARY KEY (res_id)
+)</string>
 		<string>DROP DATABASE IF EXISTS bamazon_db;
 CREATE DATABASE bamazon_db;
 USE bamazon_db;
@@ -452,7 +468,6 @@ INSERT INTO products (flavor, price, quantity)
 values ('Chocolate', 5.00, 200);
 INSERT INTO products (flavor, price, quantity) 
 values ('Strawberry', 4.00, 200)</string>
-		<string>CREATE DATABASE IF NOT EXISTS icecream_db</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>

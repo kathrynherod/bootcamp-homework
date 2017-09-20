@@ -85,5 +85,26 @@ exports.makeTable = {
         },
         head: ['Log Id','Item Id', 'Product Name', 'In-Stock', 'Stock Added', 'Updated Stock'],
         colWidths: [10,10, 30, 10, 15, 15]
+    }),
+    departments: new Table({
+        chars: {
+            'top': '═',
+            'top-mid': '╤',
+            'top-left': '╔',
+            'top-right': '╗',
+            'bottom': '═',
+            'bottom-mid': '╧',
+            'bottom-left': '╚',
+            'bottom-right': '╝',
+            'left': '║',
+            'left-mid': '╟',
+            'mid': '─',
+            'mid-mid': '┼',
+            'right': '║',
+            'right-mid': '╢',
+            'middle': '│'
+        },
+        head: ['Dept Id','Department Name', 'Overhead Costs', 'Product Sales'],
+        colWidths: [10, 30, 20, 20]
     })
 }

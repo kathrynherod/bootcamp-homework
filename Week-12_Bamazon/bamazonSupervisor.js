@@ -30,11 +30,14 @@ var bamazon = {
             name: "manage",
             type: "rawlist",
             message: "\n\n What would you like to do?",
-            choices: ["View Product Sales by Department", "View All Product Sales", "Create New Department", "View Profits", "Exit Application"]
+            choices: ["Set Up Departments", "View Product Sales by Department", "View All Product Sales", "Create New Department", "View Profits", "Exit Application"]
         }]).then(function(data) {
             switch (data.manage) {
+                case "Set Up Departments":
+                    bamazon.setUpDepartments(inq);
+                    break;
                 case "View Product Sales by Department":
-                    bamazon.displayProducts(inq);
+                    bamazon.departments(inq);
                     break;
                 case "View All Product Sales":
                     bamazon.lowInventory(inq);
@@ -49,6 +52,77 @@ var bamazon = {
                     bamazon.stopDb();
             }
         });
+    },
+    setUpDepartments: function(inq) {
+        //first we need to traverse the table of products to get departments 
+        //(I opted not to set these with existing data in case the manager adds 
+        //a product and it happens to be in a new/non-existing department)
+        sql.con.query("SELECT department_name FROM products", function(err, result, fields) {
+            var deptArr = [];
+            if (err) throw err;
+            for (i = 0; i < result.length; i++) {
+                var data = result[i];
+                //put all depts into an array
+                deptArr.push(data.department_name);
+            }
+            //clean up the array to delete duplicates
+            deptArr = deptArr.slice().sort();
+            var deptArrClean = [];
+            for (i = 0; i < deptArr.length; i++) {
+                if (deptArr[i + 1] == deptArr[i]) {
+                    deptArrClean.push(deptArr[i]);
+                }
+            }
+            console.log(deptArrClean);
+            //pop these into sql
+            bamazon.setOverhead(deptArrClean, inq);
+        });
+    },
+    setOverhead: function(deptArrClean, inq) {
+        //put the clean array of dept names into sql
+        var tables = require("./tables.js");
+        for (i = 0; i < deptArrClean.length; i++) {
+            sql.con.query(
+                "INSERT INTO departments SET ?", {
+                    department_name: deptArrClean[i]
+                },
+                function(err) {
+                    if (err) throw err;
+                }
+            );
+        }
+        //show the user the pretty new department table
+        sql.con.query("SELECT * FROM departments", function(err, result, fields) {
+            if (err) throw err;
+            for (i = 0; i < result.length; i++) {
+                var data = result[i];
+                tables.makeTable.departments.push([data.department_id, data.department_name, "", ""]);
+            }
+            console.log("Your request has been processed!\n.....\n.....\n.....\n.....\n.....\n");
+            console.log("\n\n" + tables.makeTable.departments.toString() + "\n\n\n\n\n\n\n");
+            console.log("Great job setting up the departments. Now let's set overhead costs");
+        });
+        //now get the user to set overhead costs
+        sql.con.query("SELECT * FROM departments", function(err, result, fields) {
+            if (err) throw err;
+            var overheadArr = [];
+            for (i = 0; i < result.length; i++) {
+                var data = result[i];
+                inq.prompt(
+                        [{
+                            name: "deptOverhead",
+                            message: "\nEnter the overhead costs for the " + data.department_name + " Department:\n"
+                        }]
+                    )
+                    .then(function(data) {
+                        overheadArr.push(data.deptOverhead);
+                    });
+            }
+            console.log(overheadArr)
+        });
+    },
+    departments: function() {
+
     },
     //show products
     displayProducts: function(inq) {
@@ -66,181 +140,7 @@ var bamazon = {
         });
         bamazon.initInq(inq);
     },
-    //display and query low inventory items
-    lowInventory: function(inq) {
-        var tables = require("./tables.js");
-        tables.makeTable.lowInv.splice(0);
-        var query = "SELECT * FROM products";
-        sql.con.query(query, function(err, res) {
-            if (err) throw err;
-            for (i = 0; i < res.length; i++) {
-                var data = res[i];
-                if (data.stock_quantity < 5) {
-                    tables.makeTable.lowInv.push([data.item_id, data.product_name, data.department_name, data.price, data.stock_quantity]);
-                }
-            }
-            console.log("\n\n" + tables.makeTable.lowInv.toString() + "\n\n\n\n\n\n\n");
-            console.log("Press any key to continue");
-        })
-        bamazon.initInq(inq);
-    },
-    //add inventory/stock to db
-    addInventory: function(inq) {
-        var tables = require("./tables.js");
-        tables.makeTable.prodList.splice(0);
-        sql.con.query("SELECT * FROM products", function(err, result, fields) {
-            if (err) throw err;
-            for (i = 0; i < result.length; i++) {
-                var data = result[i];
-                tables.makeTable.prodList.push([data.item_id, data.product_name, data.department_name, data.price, data.stock_quantity]);
-            }
-            console.log("\n\n" + tables.makeTable.prodList.toString() + "\n\n\n\n\n\n\n");
-            console.log("Press any key to continue");
-        });
-        inq.prompt([{
-            type: "choices",
-            message: "For which product would you like to adjust the inventory? Please enter an item_id \n\n",
-            name: "item"
-        }]).then(function(data) {
-            //take entry -> make number
-            data.item = parseInt(data.item);
-            //check if entry is a number
-            if (isNaN(data.item) === false) {
-                var item = data.item;
-                bamazon.initQuant(inq, item)
-            }
-            //if NaN have user try again
-            else {
-                console.log("PLEASE ENTER A NUMBER");
-                bamazon.addInventory(inq);
-            }
-        });
-    },
-    //add a product to db
-    addProduct: function(inq) {
-        inq.prompt([{
-                name: "itemName",
-                message: "\nEnter the product name:\n"
-            }, {
-                name: "dept",
-                message: "\nEnter the name of the department:\n"
-            }, {
-                name: "price",
-                message: "\nEnter the price of the item:\n"
-            }, {
-                name: "stock",
-                message: "\nHow many of these items are in stock?\n"
-            }])
-            .then(function(data) {
-                sql.con.query(
-                    "INSERT INTO products SET ?", {
-                        product_name: data.itemName,
-                        department_name: data.dept,
-                        price: data.price,
-                        stock_quantity: data.stock
-                    },
-                    function(err) {
-                        if (err) throw err;
-                        console.log("Your request has been processed!\n.....\n.....\n.....\n.....\n.....\n");
-                        var tables = require("./tables.js");
-                        tables.makeTable.prodList.splice(0);
-                        sql.con.query("SELECT * FROM products", function(err, result, fields) {
-                            if (err) throw err;
-                            for (i = 0; i < result.length; i++) {
-                                var data = result[i];
-                                tables.makeTable.prodList.push([data.item_id, data.product_name, data.department_name, data.price, data.stock_quantity]);
-                            }
-                            console.log("\n\n" + tables.makeTable.prodList.toString() + "\n\n\n\n\n\n\n");
-                            console.log("Press any key to continue");
-                        });
-                        bamazon.initInq(inq);
-                    }
-                );
-            });
-    },
-    //ask how much they want
-    initQuant: function(inq, item) {
-        inq.prompt([{
-            type: "input",
-            message: "How many units would you like to add? Please enter number \n\n",
-            name: "count"
-        }]).then(function(data) {
-            //take entry -> make number
-            data.count = parseInt(data.count);
-            //check if entry is a number
-            if (isNaN(data.count) === false) {
-                var quant = parseInt(data.count);
-                bamazon.confirmInventoryOrder(inq, item, quant);
-            }
-            //if NaN have user try again
-            else {
-                console.log("PLEASE ENTER A NUMBER");
-                bamazon.initQuant(inq, item);
-            }
-        });
-    },
-    //verify inventory add details
-    confirmInventoryOrder: function(inq, item, quant) {
-        var query = "SELECT * FROM products WHERE ?";
-        sql.con.query(query, { item_id: item }, function(err, res) {
-            inq.prompt({
-                    name: "confirmOrder",
-                    type: "confirm",
-                    message: "Please confirm you want to add " + quant + " " + res[0].product_name + " to the inventory."
-                })
-                .then(function(answer) {
-                    if (answer.confirmOrder === true) {
-                        console.log("\n\nAwesome! We are processing your request!\n.....\n.....\n.....\n.....\n.....\n");
-                        var quantNew = res[0].stock_quantity + quant;
-                        var prodName = res[0].product_name;
-                        bamazon.createOrder(inq, item, prodName, quant, quantNew);
-                        bamazon.updateDB(inq, item, quantNew);
-                    }
-                })
-        })
-    },
-    //spit the request into the db
-    createOrder: function(inq, item, prodName, quant, quantNew) {
-        sql.con.query(
-            "INSERT INTO inventory_log SET ?", {
-                item_id: item,
-                product_name: prodName,
-                current_stock: quantNew - quant,
-                quantity_added: quant,
-                updated_stock: quantNew
-            },
-            function(err) {
-                if (err) throw err;
-                console.log("Your request has been processed!\n.....\n.....\n.....\n.....\n.....\n");
-                var tables = require("./tables.js");
-                sql.con.query("SELECT * FROM inventory_log", function(err, result, fields) {
-                    if (err) throw err;
-                    for (i = 0; i < result.length; i++) {
-                        var data = result[i];
-                        tables.makeTable.inventoryLog.push([data.log_id, data.item_id, data.product_name, data.current_stock, data.quantity_added, data.updated_stock]);
-                    }
-                    tables.makeTable.prodList.push(["item", "inventories", "have", "been", "updated"]);
-                    console.log("\n\n" + tables.makeTable.inventoryLog.toString() + "\n\n\n\n\n\n\n");
-                    console.log("Press any key to continue");
 
-                });
-            }
-        );
-    },
-    //update the database to reflect confirmed order
-    updateDB: function(inq, item, quantNew) {
-        sql.con.query(
-            "UPDATE products SET ? WHERE ?", [
-                { stock_quantity: quantNew },
-                { item_id: item }
-            ],
-            function(err) {
-                if (err) throw err;
-                console.log("The database has been updated!\n.....\n.....\n.....\n.....\n.....\n");
-                bamazon.initInq(inq, item);
-            }
-        )
-    },
     //end db connection
     stopDb: function() {
         sql.con.end(function(err) {
