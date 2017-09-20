@@ -54,19 +54,19 @@
 			bkRldGFpbFR5cGVQcmltYXJ5S2V5ZWREZXRhaWxz0wkKCxobHKCg
 			gAfSHh8gIVokY2xhc3NuYW1lWCRjbGFzc2VzXxATTlNNdXRhYmxl
 			RGljdGlvbmFyeaMgIiNcTlNEaWN0aW9uYXJ5WE5TT2JqZWN00goL
-			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeAClZsb2dfaWTSHh8tLl8Q
-			D05TTXV0YWJsZVN0cmluZ6MtLyNYTlNTdHJpbmfSHh8xMl5OU011
-			dGFibGVBcnJheaMxMyNXTlNBcnJhedIeHyI1oiIjXxAPTlNLZXll
-			ZEFyY2hpdmVy0Tg5VGRhdGGAAQAIABEAGgAjAC0AMgA3AEUASwBS
-			AFoAZQBsAHAAcgB0AHYAegB8AH4AgACCAIcAjACRALoAwQDCAMMA
-			xQDKANUA3gD0APgBBQEOARMBFQEXARkBHgEoASoBMQE2AUgBTAFV
-			AVoBaQFtAXUBegF9AY8BkgGXAAAAAAAAAgEAAAAAAAAAOgAAAAAA
-			AAAAAAAAAAAAAZk=
+			JSehJoAJgAvSCykqK1lOUy5zdHJpbmeACl1kZXBhcnRtZW50X2lk
+			0h4fLS5fEA9OU011dGFibGVTdHJpbmejLS8jWE5TU3RyaW5n0h4f
+			MTJeTlNNdXRhYmxlQXJyYXmjMTMjV05TQXJyYXnSHh8iNaIiI18Q
+			D05TS2V5ZWRBcmNoaXZlctE4OVRkYXRhgAEACAARABoAIwAtADIA
+			NwBFAEsAUgBaAGUAbABwAHIAdAB2AHoAfAB+AIAAggCHAIwAkQC6
+			AMEAwgDDAMUAygDVAN4A9AD4AQUBDgETARUBFwEZAR4BKAEqATgB
+			PQFPAVMBXAFhAXABdAF8AYEBhAGWAZkBngAAAAAAAAIBAAAAAAAA
+			ADoAAAAAAAAAAAAAAAAAAAGg
 			</data>
 			<key>contentSortColIsAsc</key>
 			<true/>
 			<key>contentViewport</key>
-			<string>{{0, 0}, {694, 450}}</string>
+			<string>{{0, 0}, {702, 521}}</string>
 			<key>isToolbarVisible</key>
 			<true/>
 			<key>queries</key>
@@ -132,7 +132,7 @@ CREATE TABLE departments (
   PRIMARY KEY (department_id)
 );</string>
 			<key>table</key>
-			<string>inventory_log</string>
+			<string>departments</string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
 			<key>windowVerticalDividerPosition</key>
@@ -147,6 +147,62 @@ CREATE TABLE departments (
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>DROP DATABASE IF EXISTS bamazon_db;
+CREATE DATABASE bamazon_db;
+USE bamazon_db;
+CREATE TABLE products (
+  item_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  department_name VARCHAR(100) NOT NULL,
+  price INTEGER(11) NOT NULL,
+  stock_quantity INTEGER(11) NOT NULL,
+  PRIMARY KEY (item_id)
+);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('MacBook Pro', 'Electronics', 2000, 3);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('iPhone X', 'Electronics', 1200, 1);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Rocketbook', 'Office Supplies', 30, 100);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Brother Color Printer Ink', 'Office Supplies', 70, 200);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Longhorn Tumbler', 'Household', 20, 5);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Wusthoff Classic Chef Knife', 'Household', 150, 15);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Longhorn Hoodie', 'Clothing', 50, 20);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Bistro Crocs', 'Clothing', 40, 45);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Kong Indestructible Ball', 'Pets', 20, 50);
+INSERT INTO products (product_name, department_name, price, stock_quantity) 
+values ('Cow Hooves', 'Pets', 10, 450);
+CREATE TABLE orders (
+  order_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  item_id INTEGER(11) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  quantity INTEGER(11) NOT NULL,
+  total_price INTEGER(11) NOT NULL,
+  remaining_stock INTEGER(11) NOT NULL,
+  PRIMARY KEY (order_id)
+);
+CREATE TABLE inventory_log (
+  log_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  item_id INTEGER(11) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  current_stock INTEGER(11) NOT NULL,
+  quantity_added INTEGER(11) NOT NULL,
+  updated_stock INTEGER(11) NOT NULL,
+  PRIMARY KEY (log_id)
+);
+CREATE TABLE departments (
+  department_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  department_name VARCHAR(100) NOT NULL,
+  over_head_costs INTEGER(11),
+  product_sales INTEGER(11),   
+  PRIMARY KEY (department_id)
+)</string>
 		<string>DROP DATABASE IF EXISTS restaurant_db;
 CREATE DATABASE restaurant_db;
 USE restaurant_db;
@@ -454,20 +510,6 @@ CREATE TABLE auction(
 	high_bid float(10),
 	initial_bid float(10) NOT NULL
 	)</string>
-		<string>CREATE DATABASE IF NOT EXISTS icecream_db;
-CREATE TABLE products (
-  item_id INTEGER(11) AUTO_INCREMENT NOT NULL,
-  flavor VARCHAR(100) NOT NULL,
-  price INTEGER(11) NOT NULL,
-  quantity INTEGER(11) NOT NULL,
-  PRIMARY KEY (item_id)
-);
-INSERT INTO products (flavor, price, quantity) 
-values ('Vanilla', 3.00, 200);
-INSERT INTO products (flavor, price, quantity) 
-values ('Chocolate', 5.00, 200);
-INSERT INTO products (flavor, price, quantity) 
-values ('Strawberry', 4.00, 200)</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
