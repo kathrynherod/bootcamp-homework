@@ -77,6 +77,10 @@
 
   ![3](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex3.gif?raw=true)
 
+- - -
+
+  * EXTRA: I added an extra feature that `creates an Inventory Log` whenever inventory is added to the product list
+
   ![4](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-12_Bamazon/gifs/manager_ex4.gif?raw=true)
 
 - - -
