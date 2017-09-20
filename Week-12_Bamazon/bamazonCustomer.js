@@ -145,10 +145,6 @@ var bamazon = {
             function(err) {
                 if (err) throw err;
                 console.log("The database has been updated!");
-                //table.push(["", "", "", "", ""]);
-                //table.push(["the", "database", "has", "been", "updated"]);
-                //  table.push(["", "", "", "", ""]);
-                //bamazon.displayProducts(con, table);
                 bamazon.stopDb();
             }
         )

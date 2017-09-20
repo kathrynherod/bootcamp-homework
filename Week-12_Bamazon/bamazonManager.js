@@ -199,6 +199,7 @@ var bamazon = {
                 })
         })
     },
+    //spit the request into the db
     createOrder: function(inq, item, prodName, quant, quantNew) {
         sql.con.query(
             "INSERT INTO inventory_log SET ?", {
@@ -219,7 +220,6 @@ var bamazon = {
                         tables.makeTable.inventoryLog.push([data.log_id, data.item_id, data.product_name, data.current_stock, data.quantity_added, data.updated_stock]);
                     }
                     tables.makeTable.prodList.push(["item", "inventories", "have", "been", "updated"]);
-
                     console.log("\n\n" + tables.makeTable.inventoryLog.toString() + "\n\n\n\n\n\n\n");
                     console.log("Press any key to continue");
 

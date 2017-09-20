@@ -12,9 +12,9 @@ CREATE TABLE products (
 );
 
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('MacBook Pro', 'Electronics', 2000, 10);
+values ('MacBook Pro', 'Electronics', 2000, 3);
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
-values ('iPhone 7', 'Electronics', 900, 45);
+values ('iPhone X', 'Electronics', 1200, 1);
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
 values ('Rocketbook', 'Office Supplies', 30, 100);
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
@@ -32,4 +32,22 @@ values ('Kong Indestructible Ball', 'Pets', 20, 50);
 INSERT INTO products (product_name, department_name, price, stock_quantity) 
 values ('Cow Hooves', 'Pets', 10, 450);
 
+CREATE TABLE orders (
+  order_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  item_id INTEGER(11) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  quantity INTEGER(11) NOT NULL,
+  total_price INTEGER(11) NOT NULL,
+  remaining_stock INTEGER(11) NOT NULL,
+  PRIMARY KEY (order_id)
+);
 
+CREATE TABLE inventory_log (
+  log_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  item_id INTEGER(11) NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  current_stock INTEGER(11) NOT NULL,
+  quantity_added INTEGER(11) NOT NULL,
+  updated_stock INTEGER(11) NOT NULL,
+  PRIMARY KEY (log_id)
+);
