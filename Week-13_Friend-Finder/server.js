@@ -16,25 +16,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json"}));
 app.use(express.static(__dirname + '/../public'));
+//app.use(express.static(__dirname + '/../public/style.css'));
 
+//require the routes
 require('./app/routing/html-routes.js')(app);
 require('./app/routing/api-routes.js')(app);
 
-//init mysql
-var mysql = require('mysql');
-var sql = {
-    con: mysql.createConnection({
-        host: "127.0.0.1",
-        user: "root",
-        password: "rootpassword",
-        //database: "friends_db"
-    })
-}
-//connect to mysql
-sql.con.connect(function(err) {
-    if (err) { throw err; }
-    console.log("Connected to Database!");
-    app.listen(PORT, function() {
-        console.log("App listening on PORT " + PORT);
-});
-});
+// =============================================================================
+// LISTENER
+// The below code effectively "starts" our server
+// =============================================================================
+
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+  });
