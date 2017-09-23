@@ -1,0 +1,47 @@
+
+
+.madKitty {
+  background-image: url(../icons/madKitty.png);
+}
+.sadKitty {
+  background-image: url(../icons/sadKitty.png);
+}
+.mehKitty {
+  background-image: url(../icons/mehKitty.png);
+}
+.happyKitty {
+  background-image: url(../icons/happyKitty.png);
+}
+.loveKitty {
+  background-image: url(../icons/loveKitty.png);
+}
+
+.kitties{
+  cursor:pointer;
+  background-size:contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+  width:100px;height:70px;
+  -webkit-transition: all 100ms ease-in;
+     -moz-transition: all 100ms ease-in;
+          transition: all 100ms ease-in;
+          -webkit-filter: brightness(1.1) grayscale(0) opacity(1);
+          -moz-filter: brightness(1.1) grayscale(0) opacity(1);
+               filter: brightness(1.1) grayscale(0) opacity(1);
+}
+
+.kitties:hover{
+  -webkit-filter: brightness(1) grayscale(.7) opacity(.7);
+  -moz-filter: brightness(1) grayscale(.7) opacity(.7);
+       filter: brightness(1) grayscale(.7) opacity(.7);
+  
+}
+
+input[type = radio]{
+
+  display: inline-flex;
+  width:100px;height:20px;
+  align-self: center;
+}
+
+
