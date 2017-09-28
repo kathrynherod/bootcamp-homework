@@ -1,3 +1,4 @@
+DROP DATABASE if exists friends_db;
 CREATE DATABASE friends_db;
 USE friends_db;
 

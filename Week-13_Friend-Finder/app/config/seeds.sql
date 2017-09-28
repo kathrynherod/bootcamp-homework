@@ -32,9 +32,20 @@ VALUES("Jakie Rice","https://uthoustonbootcamp0617.slack.com/team/U5L1X0JG1",1,5
 
 INSERT INTO friend_list 
 (friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
-VALUES("Sonia Bradley","https://uthoustonbootcamp0617.slack.com/team/U5LSGRDAT",3,3,3,4,3,4,5,4,5,3);
+VALUES("Sonia Bradley","https://files.slack.com/files-tmb/T5AAYCYF6-F79HDQ4GZ-a8aa453527/me_720.jpg",3,3,3,4,3,4,5,4,5,3);
 
 INSERT INTO friend_list 
 (friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
-VALUES("Jeremy Jackson","https://uthoustonbootcamp0617.slack.com/team/U5L06L7GV",3, 3, 2, 4, 2, 3, 4, 4, 5, 5);
+VALUES("Jeremy Jackson","https://uthoustonbootcamp0617.slack.com/team/U5L06L7GV",3,3,2,4,2,3,4,4,5,5);
 
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Ham","https://www.facebook.com/photo.php?fbid=10153631692752852&set=a.426207217851.200388.520202851&type=3&theater#",3,3,2,4,2,3,4,4,5,5);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Tish McNeel","https://uthoustonbootcamp0617.slack.com/team/U5LRUPWA2",2,4,1,5,5,1,5,5,5,3);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Kat","https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAx8AAAAJGJkNWUyNTZmLWY1ODctNDA4My04NzU2LWIxYjJjNTE5MmI3Zg.jpg",5,5,4,5,4,5,5,5,5,5);

@@ -501,12 +501,30 @@
 			<br>
 		</div>
 		<div class="col-md-12 center">
-			<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/afhaque/friendfinder">GitHub Repo</a></p>
+			<p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/kathrynherod">GitHub Repo</a></p>
 		</div>
 	</div>
 	<hr>
 	<br>
-
+	<!-- Modal -->
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- &times; stands for × in html -->
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="modal-title">Your New Best Friend is...</h2>
+                </div>
+                <div class="modal-body text-center">
+                    <h2>You're a <span id="match-percent"></span> match with <span id="match-name"></span></h2>
+                    <img id="match-img" class="img-responsive center-block" src="" alt="this friend has no photo :(">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     </div></div>
     <script type="text/javascript">
     var findFriends = {
@@ -521,85 +539,55 @@
                 var newFriend = {
                     friend_name: $("#name").val().trim(),
                     friend_photo_url: $("#photo").val().trim(),
-                    q1: $("input[name='group1']:checked").val().trim(),
-                    q2: $("input[name='group2']:checked").val().trim(),
-                    q3: $("input[name='group3']:checked").val().trim(),
-                    q4: $("input[name='group4']:checked").val().trim(),
-                    q5: $("input[name='group5']:checked").val().trim(),
-                    q6: $("input[name='group6']:checked").val().trim(),
-                    q7: $("input[name='group7']:checked").val().trim(),
-                    q8: $("input[name='group8']:checked").val().trim(),
-                    q9: $("input[name='group9']:checked").val().trim(),
-                    q10: $("input[name='group10']:checked").val().trim()
+                    q1: parseInt($("input[name='group1']:checked").val().trim()),
+                    q2: parseInt($("input[name='group2']:checked").val().trim()),
+                    q3: parseInt($("input[name='group3']:checked").val().trim()),
+                    q4: parseInt($("input[name='group4']:checked").val().trim()),
+                    q5: parseInt($("input[name='group5']:checked").val().trim()),
+                    q6: parseInt($("input[name='group6']:checked").val().trim()),
+                    q7: parseInt($("input[name='group7']:checked").val().trim()),
+                    q8: parseInt($("input[name='group8']:checked").val().trim()),
+                    q9: parseInt($("input[name='group9']:checked").val().trim()),
+                    q10: parseInt($("input[name='group10']:checked").val().trim())
                 };
-				var currentFriend = [
-				$("input[name='group1']:checked").val().trim(),
-				$("input[name='group2']:checked").val().trim(),
-				$("input[name='group3']:checked").val().trim(),
-				$("input[name='group4']:checked").val().trim(),
-				$("input[name='group5']:checked").val().trim(),
-				$("input[name='group6']:checked").val().trim(),
-				$("input[name='group7']:checked").val().trim(),
-				$("input[name='group8']:checked").val().trim(),
-				$("input[name='group9']:checked").val().trim(),
-				$("input[name='group10']:checked").val().trim()
-					]
                 console.log(newFriend);
                 //call function to post data
-                findFriends.postData(newFriend,currentFriend);
-                
+                findFriends.postData(newFriend);
             });
         },
-        postData: function(newFriend,currentFriend) {
+        postData: function(newFriend) {
+			console.log("post data is running");
             $.post("/api/friends", newFriend,
                 function(data) {
-                    console.log("data has posted");
+					console.log("data has posted");
+					console.log(data);
+					//var newData = JSON.parse(data);
 					//call function to clear fields
+				
 					findFriends.clearFields();
-                });
-            findFriends.analyzeData(currentFriend);
+					$("#match-name").text(data.name);
+					$("#match-percent").text(data.percent);
+            		$("#match-img").attr("src",data.photo);
+            		$("#results-modal").modal("toggle");
+			}).fail(function(err){
+                console.log(err);
+            });
         },
         clearFields: function() {
             // Clear the form when submitting
             $("#name").val("");
             $("#photo").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-        },
-        analyzeData: function(currentFriend) {
-            //answers from person filling out survey
-           
-            //existing answers in db
-            var existingFriends = [];
-            var diffArr = [];
-            var currentDif = 0;
-            //traverse all friends
-            for (i = 0; i < existingFriends.length; i++) {
-                //traverse one friend at a time and compare to current
-                for (j = 0; j < existingFriends[i].length; j++) {
-                    var x = Math.abs(currentFriend[j] - existingFriends[i][j]);
-                    currentDif += x;
-                    if (j === 9) {
-                        diffArr.push(currentDif);
-                        currentDif = 0;
-                    } //close if
-                } //close for j
-
-            } // close for i
-            //find lowest difference in array and grab index for id match			
-            var bFF = diffArr.indexOf(Math.min(...diffArr))
-            console.log(bFF);
-
-
-        } //close analyze data
+            $("input[name='group1']:checked").prop('checked', false);
+            $("input[name='group2']:checked").prop('checked', false);
+            $("input[name='group3']:checked").prop('checked', false);
+            $("input[name='group4']:checked").prop('checked', false);
+            $("input[name='group5']:checked").prop('checked', false);
+            $("input[name='group6']:checked").prop('checked', false);
+            $("input[name='group7']:checked").prop('checked', false);
+            $("input[name='group8']:checked").prop('checked', false);
+            $("input[name='group9']:checked").prop('checked', false);
+            $("input[name='group10']:checked").prop('checked', false);
+        }
     }
     findFriends.init();
     </script>

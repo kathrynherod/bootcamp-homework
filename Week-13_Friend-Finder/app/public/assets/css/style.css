@@ -131,3 +131,8 @@ input[type = radio]{
     padding-left: 10px;
   }
 }
+
+#match-img {
+  max-height: 50vh;
+  width: auto;
+}
