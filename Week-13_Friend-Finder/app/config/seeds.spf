@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>friends_db</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>-6264061498839206513</string>
+			<key>name</key>
+			<string>Local</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK8QDwcIFRYXGBkfICEoLDA0OFUkbnVs
+			bNMJCgsMEBRXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6MNDg+A
+			AoADgASjERITgAWABoAKgA5UdHlwZVRyb3dzVGtleXNfECZTZWxl
+			Y3Rpb25EZXRhaWxUeXBlUHJpbWFyeUtleWVkRGV0YWlsc9MJCgsa
+			HB6hG4AHoR2ACIAJUTcJ0iIjJCVaJGNsYXNzbmFtZVgkY2xhc3Nl
+			c18QE05TTXV0YWJsZURpY3Rpb25hcnmjJCYnXE5TRGljdGlvbmFy
+			eVhOU09iamVjdNIKCykroSqAC4AN0gstLi9ZTlMuc3RyaW5ngAxZ
+			ZnJpZW5kX2lk0iIjMTJfEA9OU011dGFibGVTdHJpbmejMTMnWE5T
+			U3RyaW5n0iIjNTZeTlNNdXRhYmxlQXJyYXmjNTcnV05TQXJyYXnS
+			IiMmOaImJ18QD05TS2V5ZWRBcmNoaXZlctE8PVRkYXRhgAEACAAR
+			ABoAIwAtADIANwBJAE8AVgBeAGkAcAB0AHYAeAB6AH4AgACCAIQA
+			hgCLAJAAlQC+AMUAxwDJAMsAzQDPANEA0gDXAOIA6wEBAQUBEgEb
+			ASABIgEkASYBKwE1ATcBQQFGAVgBXAFlAWoBeQF9AYUBigGNAZ8B
+			ogGnAAAAAAAAAgEAAAAAAAAAPgAAAAAAAAAAAAAAAAAAAak=
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {645, 472}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Charles McDowell','https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/14224967_358092211189516_532114160343420505_n.jpg?oh=0aaf2d8540b74d31423577d05f422fc4&amp;oe=5A4AAC19',1,5,1,1,1,1,5,5,1,5);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Cam Kirkland','https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAL2AAAAJGE3MDU0NmQwLWMyZTktNGYzMi1iNGM1LTc1MmY3Mjg3ZmVkYg.jpg',5,1,2,4,4,2,4,4,3,4);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Yogashri Pradhan','https://uthoustonbootcamp0617.slack.com/team/U5KJKJJQH',5,5,3,5,5,4,5,5,5,4);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Michelle Bury','https://uthoustonbootcamp0617.slack.com/team/U5AAYCYJY',1,4,3,5,2,1,4,2,2,2);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Art Tregubchak','https://uthoustonbootcamp0617.slack.com/team/U5KFQN7R6',3,5,3,4,3,1,4,5,2,4);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Yahya Al zubaidi','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png',2,3,2,2,2,2,4,3,3,2);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Rachel Estrada','https://files.slack.com/files-pri/T5AAYCYF6-F7A1KKD53/rachel.jpg',4,5,4,5,4,5, 5,4,5,5);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Jakie Rice","https://uthoustonbootcamp0617.slack.com/team/U5L1X0JG1",1,5,2,5,1,4,5,3,3,3);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Sonia Bradley","https://uthoustonbootcamp0617.slack.com/team/U5LSGRDAT",3,3,3,4,3,4,5,4,5,3);
+
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Jeremy Jackson","https://uthoustonbootcamp0617.slack.com/team/U5L06L7GV",3, 3, 2, 4, 2, 3, 4, 4, 5, 5);
+
+</string>
+			<key>table</key>
+			<string>friend_list</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>308</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES("Sonia Bradley","https://uthoustonbootcamp0617.slack.com/team/U5LSGRDAT",3,3,3,4,3,4,5,4,5,3)</string>
+		<string>INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Rachel Estrada','https://files.slack.com/files-pri/T5AAYCYF6-F7A1KKD53/rachel.jpg',4,5,4,5,4,5, 5,4,5,5)</string>
+		<string>INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Charles McDowell','https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/14224967_358092211189516_532114160343420505_n.jpg?oh=0aaf2d8540b74d31423577d05f422fc4&amp;oe=5A4AAC19',1,5,1,1,1,1,5,5,1,5);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Cam Kirkland','https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAL2AAAAJGE3MDU0NmQwLWMyZTktNGYzMi1iNGM1LTc1MmY3Mjg3ZmVkYg.jpg',5,1,2,4,4,2,4,4,3,4);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Yogashri Pradhan','https://uthoustonbootcamp0617.slack.com/team/U5KJKJJQH',5,5,3,5,5,4,5,5,5,4);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Michelle Bury','https://uthoustonbootcamp0617.slack.com/team/U5AAYCYJY',1,4,3,5,2,1,4,2,2,2);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Art Tregubchak','https://uthoustonbootcamp0617.slack.com/team/U5KFQN7R6',3,5,3,4,3,1,4,5,2,4);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Yahya Al zubaidi','https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/SNice.svg/1200px-SNice.svg.png',2,3,2,2,2,2,4,3,3,2);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Rachel Estrada','https://uthoustonbootcamp0617.slack.com/team/U5LSN9S84',4,5,4,5,4,5, 5,4,5,5)</string>
+		<string>DROP DATABASE if exists friends_db;
+CREATE DATABASE friends_db;
+USE friends_db;
+CREATE TABLE friend_list (
+  friend_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  friend_name VARCHAR(100) NOT NULL,
+  friend_photo_url VARCHAR(1000) NOT NULL,
+  q1 INTEGER(11) NOT NULL,
+  q2 INTEGER(11) NOT NULL,
+  q3 INTEGER(11) NOT NULL,
+  q4 INTEGER(11) NOT NULL,
+  q5 INTEGER(11) NOT NULL,
+  q6 INTEGER(11) NOT NULL,
+  q7 INTEGER(11) NOT NULL,
+  q8 INTEGER(11) NOT NULL,
+  q9 INTEGER(11) NOT NULL,
+  q10 INTEGER(11) NOT NULL,
+  PRIMARY KEY (friend_id)
+)</string>
+		<string>CREATE DATABASE friends_db;
+USE friends_db;
+CREATE TABLE friend_list (
+  friend_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  friend_name VARCHAR(100) NOT NULL,
+  friend_photo_url VARCHAR(1000) NOT NULL,
+  q1 INTEGER(11) NOT NULL,
+  q2 INTEGER(11) NOT NULL,
+  q3 INTEGER(11) NOT NULL,
+  q4 INTEGER(11) NOT NULL,
+  q5 INTEGER(11) NOT NULL,
+  q6 INTEGER(11) NOT NULL,
+  q7 INTEGER(11) NOT NULL,
+  q8 INTEGER(11) NOT NULL,
+  q9 INTEGER(11) NOT NULL,
+  q10 INTEGER(11) NOT NULL,
+  PRIMARY KEY (friend_id)
+)</string>
+		<string>INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Charles McDowell','https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/14224967_358092211189516_532114160343420505_n.jpg?oh=0aaf2d8540b74d31423577d05f422fc4&amp;oe=5A4AAC19',1,5,1,1,1,1,5,5,1,5);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Cam Kirkland','https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAL2AAAAJGE3MDU0NmQwLWMyZTktNGYzMi1iNGM1LTc1MmY3Mjg3ZmVkYg.jpg',5,1,2,4,4,2,4,4,3,4);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Yogashri Pradhan','https://uthoustonbootcamp0617.slack.com/team/U5KJKJJQH',5,5,3,5,5,4,5,5,5,4);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Michelle Bury','https://uthoustonbootcamp0617.slack.com/team/U5AAYCYJY',1,4,3,5,2,1,4,2,2,2);
+INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Art Tregubchak','https://uthoustonbootcamp0617.slack.com/team/U5KFQN7R6',3,5,3,4,3,1,4,5,2,4)</string>
+		<string>DROP DATABASE IF EXISTS friends_db;
+CREATE DATABASE friends_db;
+USE friends_db;
+CREATE TABLE friend_list (
+  friend_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  friend_name VARCHAR(100) NOT NULL,
+  friend_photo_url VARCHAR(1000) NOT NULL,
+  q1 INTEGER(11) NOT NULL,
+  q2 INTEGER(11) NOT NULL,
+  q3 INTEGER(11) NOT NULL,
+  q4 INTEGER(11) NOT NULL,
+  q5 INTEGER(11) NOT NULL,
+  q6 INTEGER(11) NOT NULL,
+  q7 INTEGER(11) NOT NULL,
+  q8 INTEGER(11) NOT NULL,
+  q9 INTEGER(11) NOT NULL,
+  q10 INTEGER(11) NOT NULL,
+  PRIMARY KEY (friend_id)
+)</string>
+		<string>INSERT INTO friend_list 
+(friend_name, friend_photo_url,q1,q2,q3,q4,q5,q6,q7,q8,q9,q10) 
+VALUES ('Cam Kirkland','https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAL2AAAAJGE3MDU0NmQwLWMyZTktNGYzMi1iNGM1LTc1MmY3Mjg3ZmVkYg.jpg',5,1,2,4,4,2,4,4,3,4)</string>
+		<string>### Schema
+
+CREATE DATABASE parties_db;
+USE parties_db;
+CREATE TABLE clients
+(
+	id int NOT NULL AUTO_INCREMENT,
+	client_name varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+CREATE TABLE parties
+(
+	id int NOT NULL AUTO_INCREMENT,
+	party_name varchar(255) NOT NULL,
+	party_type varchar(255) NOT NULL,
+	party_cost int NOT NULL,
+	client_id int NOT NULL,
+	PRIMARY KEY (id),
+	FOREIGN KEY (client_id) REFERENCES clients(id)
+);
+INSERT INTO clients (client_name) VALUES ('Bilal');
+INSERT INTO clients (client_name) VALUES ('Brianne');
+INSERT INTO clients (client_name) VALUES ('Vincent');
+INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Everybody Loves Raymond', 'tv', 500, 1);
+INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Big Bang Theory', 'tv', 900, 1);
+INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Top Gun', 'movie', 200, 2);
+INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Whiskey', 'grown-up', 300, 2);
+INSERT INTO parties (party_name, party_type, party_cost, client_id) VALUES ('Cigar', 'grown-up', 250, 3)</string>
+		<string>CREATE DATABASE quotes_db;
+USE quotes_db;
+CREATE TABLE quotes
+(
+	id int NOT NULL AUTO_INCREMENT,
+	author varchar(255) NOT NULL,
+	quote TEXT NOT NULL,
+	PRIMARY KEY (id)
+);
+INSERT INTO quotes (quote, author) VALUES ('Know your "why" in any of your endeavors. That will push you through any wall you hit.', 'Albert Bahia');
+INSERT INTO quotes (quote, author) VALUES ('In any moment of decision, the best thing you can do is the right thing, the next best thing is the wrong thing, and the worst thing you can do is nothing.', "Theodore Roosevelt");
+INSERT INTO quotes (quote, author) VALUES ('Never leave home without your cardigan.', "Owens O'Brien");
+INSERT INTO quotes (quote, author) VALUES ('Give me fuel, Give me fire, Give me that which I desire, Ooh!', "Nate Tuvera");
+INSERT INTO quotes (quote, author) VALUES ("TiK ToK, on the clock; But the party don't stop no; Whoa-oh oh oh; Whoa-oh oh oh; Don't stop, make it pop; DJ, blow my speakers up", "Michael Stearne");
+INSERT INTO quotes (quote, author) VALUES ("They told him don't you ever come around here; Don't want to see your face, you better disappear; The fire's in their eyes and their words are really clear; So beat it, just beat it", "Dan Orrico");
+INSERT INTO quotes (quote, author) VALUES ("Sup brah?", "Ruby Pradhan")</string>
+		<string>-- Create the database day_planner_db and specified it for use.
+CREATE DATABASE moviePlanner_db;
+USE moviePlanner_db;
+-- Create the table plans.
+CREATE TABLE movies
+(
+id int NOT NULL AUTO_INCREMENT,
+movie varchar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+-- Insert a set of records.
+INSERT INTO movies (movie) VALUES ('Titanic')</string>
+		<string>-- Create the database day_planner_db and specified it for use.
+CREATE DATABASE day_planner_db;
+USE day_planner_db;
+-- Create the table plans.
+CREATE TABLE plans
+(
+id int NOT NULL AUTO_INCREMENT,
+plan varchar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+-- Insert a set of records.
+INSERT INTO plans (plan) VALUES ('Plan to fight a ninja.')</string>
+		<string>INSERT INTO wishes (wish) VALUES ('Save the world.')</string>
+		<string>INSERT INTO wishes (wish) VALUES ('Eat ice cream')</string>
+		<string>INSERT INTO wishess (wish) VALUES ('Eat ice cream')</string>
+		<string>INSERT INTO wishess (wish) VALUES ('Save the world.')</string>
+		<string>-- Create the database wishes_saver_db and specified it for use.
+CREATE DATABASE wishes_db;
+USE wishes_db;
+-- Create the table wishes.
+CREATE TABLE wishes
+(
+id int NOT NULL AUTO_INCREMENT,
+wish varchar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+-- Insert a set of records.
+INSERT INTO wishes (wish) VALUES ('One million dollars.');
+INSERT INTO wishess (wish) VALUES ('Save the world.');
+INSERT INTO wishess (wish) VALUES ('Eat ice cream')</string>
+		<string>-- Create the database wishes_saver_db and specified it for use.
+CREATE DATABASE wishes_db;
+USE wishes_db;
+-- Create the table wishes.
+CREATE TABLE wishes
+(
+id int NOT NULL AUTO_INCREMENT,
+wish varchar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+-- Insert a set of records.
+INSERT INTO wishes (wishes) VALUES ('One million dollars.')</string>
+		<string>CREATE DATABASE task_saver_db;
+USE task_saver_db;
+-- Create the table tasks.
+CREATE TABLE tasks
+(
+id int NOT NULL AUTO_INCREMENT,
+task varchar(255) NOT NULL,
+PRIMARY KEY (id)
+);
+-- Insert a set of records.
+INSERT INTO tasks (task) VALUES ('Pick up milk.');
+INSERT INTO tasks (task) VALUES ('Mow the law.');
+INSERT INTO tasks (task) VALUES ('Call Shannon back.')</string>
+		<string>DROP DATABASE IF EXISTS seinfeld_db;
+CREATE DATABASE seinfeld_db;
+USE seinfeld_db;
+CREATE TABLE actors (
+  actor_id INTEGER(11) AUTO_INCREMENT NOT NULL,
+  char_name VARCHAR(100) NOT NULL,
+  coolness_points INTEGER(11) NOT NULL,
+  attitude VARCHAR(100) NOT NULL,
+  PRIMARY KEY (actor_id)
+);
+INSERT INTO actors (char_name, coolness_points, attitude) 
+values ('Jaime',50,"king slayer");
+INSERT INTO actors (char_name, coolness_points, attitude) 
+values ('Cersei',70,"RBF");
+INSERT INTO actors (char_name, coolness_points, attitude) 
+values ('Daenerys',90,"on fire");
+INSERT INTO actors (char_name, coolness_points, attitude) 
+values ('Jon Snow',100,"chill");
+INSERT INTO actors (char_name, coolness_points, attitude) 
+values ('Arya',100,"badass");
+INSERT INTO actors (char_name, coolness_points, attitude) 
+values ('Joffrey',0,"little shit")</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.19</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
