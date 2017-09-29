@@ -14,5 +14,5 @@
 | 10 | [✓] | LIRI Bot | Javascript, node.js, [Twitter API](https://www.npmjs.com/package/twitter), [Spotifiy API](https://www.npmjs.com/package/spotify-web-api-node), [OMDB API](https://www.npmjs.com/package/omdb), [node-emoji](https://www.npmjs.com/package/node-emoji) , JSON | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App) | n/a |  |
 | 11 | [✓] | Flashcards | Javascript, node.js, JSON, [Chalk](https://www.npmjs.com/package/chalk) | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-11_Flashcard-Generator) | n/a |  |
 | 12 | [✓] | Bamazon | Javascript, node.js, MYSQL, [CLI-table](https://www.npmjs.com/package/cli-table) | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-12_Bamazon) | n/a |  |
-| 13 | [✓] | Friend Finder | Javascript, node.js, MYSQL, Express | [Repo](https://github.com/kathrynherod/Week-13_Friend-Finder) | [Heroku](https://kh-friend-finder.herokuapp.com/) |  |
+| 13 | [✓] | Friend Finder | Javascript, node.js, MYSQL, Express, JawsDB, Heroku | [Repo](https://github.com/kathrynherod/Week-13_Friend-Finder) | [Heroku](https://kh-friend-finder.herokuapp.com/) |  |
 
