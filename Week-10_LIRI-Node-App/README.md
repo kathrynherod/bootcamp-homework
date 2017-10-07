@@ -14,7 +14,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
    * This will show your last 20 tweets and when they were created at in your terminal/bash window.
 
-   ![2](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App/gifs/ex1.gif?raw=true)
+   ![2](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-10_LIRI-Node-App/gifs/ex2.gif?raw=true)
 
 2. `node liri.js spotify-this-song '<song name here>'`
 
@@ -27,7 +27,8 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
    * if no song is provided then your program will default to
      * "The Sign" by Ace of Base
 
-  ![3](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App/gifs/ex3.gif?raw=true)
+    ![3](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-10_LIRI-Node-App/gifs/ex3.gif?raw=true)
+
 
 3. `node liri.js movie-this '<movie name here>'`
 
@@ -43,7 +44,8 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
        * Actors in the movie.
        * Rotten Tomatoes URL.
      ```
-  ![4](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App/gifs/ex4.gif?raw=true)
+  ![4](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-10_LIRI-Node-App/gifs/ex4.gif?raw=true)
+
 
    * If the user doesn't type a movie in, the program will output data for the movie 'Mr. Nobody.'
      * If you haven't watched "Mr. Nobody," then you should: <http://www.imdb.com/title/tt0485947/>
@@ -54,7 +56,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
      * It should run `spotify-this-song` for "I Want it That Way," as follows the text in `random.txt`.
      * Feel free to change the text in that document to test out the feature for other commands.
 
-     ![5](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App/gifs/ex5.gif?raw=true)
+     ![5](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-10_LIRI-Node-App/gifs/ex5.gif?raw=true)
 
 - - -
 
