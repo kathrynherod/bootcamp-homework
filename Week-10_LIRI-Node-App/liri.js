@@ -9,7 +9,7 @@ var liri = {
         var Spotify = require('node-spotify-api');
         var spotify = new Spotify(keys.spotifyKeys);
 
-        var action = process.argv[2].toLowerCase();
+        var action = process.argv[2];
         var title = process.argv[3];
         for (i = 4; i < 25; i++) {
             if (process.argv[i] !== undefined || null) {
@@ -29,8 +29,8 @@ var liri = {
             });
         this.getTask(emoji, action, title, twitter, tUser, spotify, title, request, fs);
     },
-    getTask: function(emoji, action, title, twitter, tUser, spotify, title, request, fs) {
-        if (action === "my-tweets" || "spotify-this-song" || "movie-this" || "do-what-it-says") {
+    getTask: function (emoji, action, title, twitter, tUser, spotify, title, request, fs) {
+       
             switch (action) {
                 case "my-tweets":
                     liri.myTweets(twitter, tUser, fs);
@@ -46,25 +46,23 @@ var liri = {
                         title = "Mr. Nobody";
                     }
                     liri.myMovie(emoji, title, request, fs)
-                    break
+                    break;
                 case "do-what-it-says":
                     liri.doWhat(emoji, action, title, twitter, tUser, spotify, title, request, fs);
-            }
-        }
-        //START check if user types too many spaces
-        else {
-            var cinema = emoji.get("cinema") + " ";
-            var error = emoji.get('exclamation') + " " + emoji.get('fire') + " " + emoji.get('x') + " " + emoji.get('rage') + " ";
-            error += error;
-            var bird = emoji.get("baby_chick");
-            var music = emoji.get("musical_note");
-            var point = emoji.get("point_right")
-            console.log('\n\n' + error + '  E--R--R--O--R  ' + error + '\n\n')
-            console.log('-->>Please enter commands using dashes(-) for spaces:\n')
-            console.log('---->>> ' + bird + '  Example 1: my-tweets \n\n---->>> ' + music + '  Example 2: spotify-this-song + song title\n\n---->>> ' + cinema + '  Example 3: movie-this + movie name\n\n---->>> ' + point + '  Example 4: do-what-it-says\n\n')
-            console.log(error + error + error + '\n')
-        }
-        //END check if user types too many spaces
+                    break;
+                case undefined:
+                    var cinema = emoji.get("cinema") + " ";
+                    var error = emoji.get('exclamation') + " " + emoji.get('fire') + " " + emoji.get('x') + " " + emoji.get('rage') + " ";
+                    error += error;
+                    var bird = emoji.get("baby_chick");
+                    var music = emoji.get("musical_note");
+                    var point = emoji.get("point_right")
+                    console.log('\n\n' + error + '  E--R--R--O--R  ' + error + '\n\n')
+                    console.log('-->>Please enter commands using dashes(-) for spaces:\n')
+                    console.log('---->>> ' + bird + '  Example 1: my-tweets \n\n---->>> ' + music + '  Example 2: spotify-this-song + song title\n\n---->>> ' + cinema + '  Example 3: movie-this + movie name\n\n---->>> ' + point + '  Example 4: do-what-it-says\n\n')
+                    console.log(error + error + error + '\n');
+                    break;
+                }
     },
     myTweets: function(twitter, tUser, fs) {
         console.log("twitter running")
@@ -74,9 +72,8 @@ var liri = {
             }
             if (!error && response.statusCode === 200) {
                 for (i = 19; i >= 0; i--) {
-                    console.log(i + 1)
-                    console.log(tweets[i].text);
-                    fs.appendFile("log.txt", tweets[i].text + "\n", function(err) {
+                    console.log("Tweet #" + (i + 1) + ": " + tweets[i].text + "\n\n");
+                    fs.appendFile("log.txt", tweets[i].text + "\n\n", function(err) {
                         if (err) {
                             return console.log(err);
                         }
