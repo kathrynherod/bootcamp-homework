@@ -8,7 +8,7 @@ In this assignment, you will make LIRI. LIRI is like iPhone's SIRI. However, whi
 
 ### What Each Command Should Do
 
-![1](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-10_LIRI-Node-App/gifs/ex1.gif?raw=true)
+![1](https://github.com/kathrynherod/bootcamp-homework/blob/master/Week-10_LIRI-Node-App/gifs/ex1.gif?raw=true)
 
 1. `node liri.js my-tweets`
 
