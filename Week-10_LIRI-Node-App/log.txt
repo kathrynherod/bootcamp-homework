@@ -665,3 +665,93 @@ Song Title: I Want It That Way
 Artist: Backstreet Boys
 Album: The Hits--Chapter One
 Preview URL: https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=53ac114386d849e0b97ab7fee2fc1d7e
+
+ -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-
+
+my-tweets ==>> undefined
+
+RT @lggreenemeier: Why you should think twice before giving an app access to your phone’s address book https://t.co/u2FA6sxKw8 #podcast #sh…
+
+RT @mashable: Breaking: White House's white nationalist-in-chief, Steve Bannon, is OUT. https://t.co/syzQ2uvkyV Related: byeeeeeeeeeeeee
+
+RT @TechCrunch: Google to livestream Android O launch event timed for total solar eclipse https://t.co/45my4ycfq2 by @etherington https://t…
+
+RT @ArchDaily: Explore These Digitally-Created Abandoned Islands by Brazilian Designer Fabio Araujo https://t.co/xPbFPs5Fsr #architecture
+
+RT @TechCrunch: iOS 11 is quite the game-changer for iPad owners https://t.co/gVy6TWM6Yk https://t.co/bu8emvE1QL
+
+RT @TechCrunch: Hands on with Andy Rubin’s Essential Phone https://t.co/Hjx5OGR5vb https://t.co/zbWZ55WHgf
+
+RT @mashable: Google Home will now work with free Spotify accounts https://t.co/95mZvDYimL https://t.co/1Hrzc8S1af
+
+RT @Architizer: Hey New Yorkers! Join this workshop with @MoMAPS1's Lumen exhibition designer @jennysabin tomorrow: https://t.co/pRCaWcv2TP…
+
+RT @NBCConnecticut: See a town by town list of which school districts are impacted by Governor Malloy's executive order ---&gt; https://t.co/w…
+
+RT @mashable: Someone actually asked @StarTalkRadio host, Neil deGrasse Tyson if the sun's heat could melt the moon https://t.co/XyZTKTjOLy
+
+RT @Architizer: Are SketchUp and Photoshop the best programs for visualizations? What software makes for the best workflow? 📐📈👀 https://t.c…
+
+RT @mashable: The solar eclipse shows up beautifully in weather forecast models https://t.co/bvF2wWoKsL
+
+RT @TechCrunch: Airbnb is offering free housing in Barcelona for people affected by the attack https://t.co/sbjxUcQEb4 by @meganrosedickey
+
+RT @WIRED: The machines may be stronger than us, but they’re missing out on a vital superpower—until now. https://t.co/TdPXR8bap1
+
+RT @mashable: Finally take photos like a pro 📸  https://t.co/iHzPWKXjSr
+
+RT @ATTBusiness: #ATT security analytics detect cyberattacks in near real-time and deploy countermeasures. https://t.co/F4JSMPy8VZ
+
+RT @planetepics: Baby Tasmanian Devil Is So In Love With His Human It Follows Him Everywhere He Goes https://t.co/E3xX53DqRW
+
+RT @WIRED: First you spend around $50,000 on the Porsche 993. Then another cool half-mill on the conversion. Go nuts https://t.co/7aug6WByk5
+
+RT @HomeAdore: Glen Echo Residence by Robert M. Gurney | https://t.co/CgZKdF3GeP
+Please RT #architecture #interiordesign https://t.co/Ta0C7…
+
+Free One Page Responsive HTML Resume Template - mRova Solutions https://t.co/LWbYOYyVC3 via @mRovaSolutions
+
+
+ -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-
+
+movie-this ==>> Pulp Fiction
+
+Title:                  Pulp Fiction
+Release Year:           1994
+IMDB Rating:            8.9
+Rotten Tomatoes Rating: 94%
+Production Country:     USA
+Language:               English, Spanish, French
+Actors:                 Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta
+Plot:                   The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.
+
+ -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-
+
+my ==>> tweets
+
+
+ -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-
+
+movie-this ==>> pulp fiction
+
+Title:                  Pulp Fiction
+Release Year:           1994
+IMDB Rating:            8.9
+Rotten Tomatoes Rating: 94%
+Production Country:     USA
+Language:               English, Spanish, French
+Actors:                 Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta
+Plot:                   The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.
+
+ -x-x-x-x-x-x-x-x-x-x- L-O-G  E-N-T-R-Y -x-x-x-x-x-x-x-x-x-x-
+
+movie-this ==>> Pulp Fiction
+
+Title:                  Pulp Fiction
+Release Year:           1994
+IMDB Rating:            8.9
+Rotten Tomatoes Rating: 94%
+Production Country:     USA
+Language:               English, Spanish, French
+Actors:                 Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta
+Plot:                   The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.
