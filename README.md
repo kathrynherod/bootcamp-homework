@@ -16,4 +16,4 @@
 | 12 | [✓] | Bamazon | Javascript, node.js, MYSQL, [CLI-table](https://www.npmjs.com/package/cli-table) | [Repo](https://github.com/kathrynherod/bootcamp-homework/tree/master/Week-12_Bamazon) | n/a |  |
 | 13 | [✓] | Friend Finder | Javascript, node.js, MYSQL, Express, JawsDB, Heroku | [Repo](https://github.com/kathrynherod/Week-13_Friend-Finder) | [Heroku](https://kh-friend-finder.herokuapp.com/) |  |
 | 14 | [✓] | Eat Cake | Javascript, node.js, MYSQL, Express, JawsDB, Heroku, Handlebars | [Repo](https://github.com/kathrynherod/eat_cake) | [Heroku](https://stormy-hamlet-69381.herokuapp.com/) |  |
-| 14 | [in-progress] | Eat More Cake | Javascript, node.js, MYSQL, Express, JawsDB, Heroku, Handlebars, Sequelize | [Repo](https://github.com/kathrynherod/eat_more_cake) | [Heroku]() |  |
+| 15 & 16 | [in-progress] | Dis or Dat | Javascript, node.js, MYSQL, Express, JawsDB, Heroku, Handlebars, Sequelize, moment.js, Foundation, Passport, BCrypt | [Repo](https://github.com/CharlesRMc/disordat) | [Heroku](https://disordat.herokuapp.com/) | [Jakie Rice](https://github.com/jakierice) & [Charles McDowell](https://github.com/CharlesRMc) |
