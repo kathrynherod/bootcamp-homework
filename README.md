@@ -17,7 +17,7 @@
 | 13 | [✓] | Friend Finder | Javascript, node.js, MYSQL, Express, JawsDB, Heroku | [Repo](https://github.com/kathrynherod/Week-13_Friend-Finder) | [Heroku](https://kh-friend-finder.herokuapp.com/) |  |
 | 14 | [✓] | Eat Cake | Javascript, node.js, MYSQL, Express, JawsDB, Heroku, Handlebars | [Repo](https://github.com/kathrynherod/eat_cake) | [Heroku](https://stormy-hamlet-69381.herokuapp.com/) |  |
 | 15 & 16 | [✓ish] | Dis or Dat | Javascript, node.js, MYSQL, Express, JawsDB, Heroku, Handlebars, Sequelize, moment.js, Foundation, Passport, BCrypt | [Repo](https://github.com/CharlesRMc/disordat) | [Heroku](https://disordat.herokuapp.com/) | [Jakie Rice](https://github.com/jakierice) & [Charles McDowell](https://github.com/CharlesRMc) |
-| 18 | [✓] | Web Scraping | Javascript, node.js, Mongo, Mongoose, Express, Heroku | [Repo](https://github.com/kathrynherod/Week-18_Web-Scraping) | [Heroku](https://serene-beyond-27591.herokuapp.com/) |  |
+| 17 & 18 | [✓] | Web Scraping | Javascript, node.js, Mongo, Mongoose, Express, Heroku | [Repo](https://github.com/kathrynherod/Week-18_Web-Scraping) | [Heroku](https://serene-beyond-27591.herokuapp.com/) |  |
 
 
 
