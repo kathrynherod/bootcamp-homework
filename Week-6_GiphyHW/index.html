@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Giphy Homework</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" id="#main-holder">
+            <!--left sidebar-->
+            <div class="col-md-3 col-sm-4 col-xs-3" id="l-sidebar">
+                <!--top sidebar section with form-->
+                <div class="row" id="form-row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form id=#custom-form>
+                            <div class="form-group">
+                                <label for="giphy-input" id="format-label-text" class="center-block">Search for a gif</label>
+                                <input type="text" class="form-control" id="giphy-input" placeholder="cats on bicycles">
+                            </div>
+                            <button type="submit" class="btn center-block" id="custom-add-btn">Search the Giphy Universe</button>
+                        </form>
+                    </div>
+                </div>
+                <!--mid/bottom sidebar section with buttons-->
+                <div class="row" id="buttons-area">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4 id="past-search-head">Past Searches</h4>
+                    </div>
+                    <div class="row" id="generate-buttons">
+                    </div>
+                </div>
+                <div cass="row" id="logo-holder">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <img class="img-responsive center-block" src="giphy_logo.gif">
+                    </div>
+                </div>
+            </div>
+            <!--end of left sidebar-->
+            <div class="col-md-9 col-sm-8 col-xs-9" id="main-sect">
+                <div class="row">
+                    <h3 id="gif-results" class="center-block"></h3></div>
+                <div class="row" id="generate-gifs">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--JS-->
+    <!--JS-->
+    <!--JS-->
+    <!--JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="giphy.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+
+</html>
